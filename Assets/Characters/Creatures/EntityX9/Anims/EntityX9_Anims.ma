@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: EntityX9_Anims.ma
-//Last modified: Thu, Feb 12, 2026 05:46:47 PM
+//Last modified: Sun, Feb 15, 2026 10:12:25 AM
 //Codeset: 1252
 file -rdi 1 -ns "SpecimenX9Rig" -rfn "SpecimenX9RigRN" -op "v=0;" -typ "mayaAscii"
 		 "E:/GitRepos/ProjectXenosRevivalAssets//Assets/Characters/Creatures/EntityX9/EntityX9Rig.ma";
@@ -20,7 +20,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202511121304-3e6f4fc3f6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "126CE69E-4710-B757-5F13-BCB0CEE396D9";
+fileInfo "UUID" "104C4F9A-49F0-6E97-444D-3F8A7257C693";
 createNode transform -s -n "persp";
 	rename -uid "52547CEE-43EC-8946-9CAA-42BE9C19B96D";
 	setAttr ".v" no;
@@ -43419,171 +43419,173 @@ createNode reference -n "SpecimenX9RigRN";
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Geometry|SpecimenX9Rig:Eyes|SpecimenX9Rig:R_Eye|SpecimenX9Rig:R_EyeShape" 
 		"uvPivot" " -type \"double2\" 4.49465274810791016 0.49254424870014191"
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Spine_01_FK_Jnt|SpecimenX9Rig:Spine_02_FK_Jnt|SpecimenX9Rig:Spine_03_FK_Jnt|SpecimenX9Rig:L_Clav_FK_Jnt|SpecimenX9Rig:L_Arm_01_IK_Jnt" 
-		"rotate" " -type \"double3\" -21.98038449441737896 12.97326357011515618 58.88209598475129525"
+		"rotate" " -type \"double3\" -1.61715590587450464 -23.29640595813760484 -29.05841359076161723"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Spine_01_FK_Jnt|SpecimenX9Rig:Spine_02_FK_Jnt|SpecimenX9Rig:Spine_03_FK_Jnt|SpecimenX9Rig:L_Clav_FK_Jnt|SpecimenX9Rig:L_Arm_01_IK_Jnt|SpecimenX9Rig:L_Arm_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 0 0 41.70058312413123502"
+		"rotate" " -type \"double3\" 0 0 83.01352090178083643"
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Spine_01_FK_Jnt|SpecimenX9Rig:Spine_02_FK_Jnt|SpecimenX9Rig:Spine_03_FK_Jnt|SpecimenX9Rig:R_Clav_FK_Jnt|SpecimenX9Rig:R_Arm_01_IK_Jnt" 
-		"rotate" " -type \"double3\" -17.09145601289781524 34.62261163059156388 78.15925947977027022"
+		"rotate" " -type \"double3\" -2.9330369143391648 -27.82939987439096186 -29.47131701648695667"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Spine_01_FK_Jnt|SpecimenX9Rig:Spine_02_FK_Jnt|SpecimenX9Rig:Spine_03_FK_Jnt|SpecimenX9Rig:R_Clav_FK_Jnt|SpecimenX9Rig:R_Arm_01_IK_Jnt|SpecimenX9Rig:R_Arm_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.00015023939980260951 0.00021596253414001021 23.8265630184161914"
+		"rotate" " -type \"double3\" 0.00046998490518350113 0.0006755826451938366 74.53520831267690028"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt" 
-		"rotate" " -type \"double3\" 15.2056513088338221 0.72343508207346574 37.16690919855342656"
+		"rotate" " -type \"double3\" -7.00782073749595558 -11.51145828828227735 12.25850496561256442"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt|SpecimenX9Rig:L_Leg_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 0 0 -15.57477636842460811"
+		"rotate" " -type \"double3\" 0 0 -6.18932913074231106"
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt|SpecimenX9Rig:L_Leg_02_IK_Jnt|SpecimenX9Rig:L_Leg_03_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.50936028860087446 -0.66020642370453786 14.2732264550066219"
+		"rotate" " -type \"double3\" 0.22200119965960169 -0.24698234200960856 5.67270374664590449"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt|SpecimenX9Rig:L_Leg_02_IK_Jnt|SpecimenX9Rig:L_Leg_03_IK_Jnt|SpecimenX9Rig:L_Leg_04_IK_Jnt|SpecimenX9Rig:L_Foot_IK_Jnt" 
-		"rotate" " -type \"double3\" 1.13069833398383479 -9.83785450337267697 46.9560352858216703"
+		"rotate" " -type \"double3\" -9.59683825404231605 2.00740937269294584 -2.60258028756805393"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt|SpecimenX9Rig:L_Leg_02_IK_Jnt|SpecimenX9Rig:L_Leg_03_IK_Jnt|SpecimenX9Rig:L_Leg_04_IK_Jnt|SpecimenX9Rig:L_Foot_IK_Jnt|SpecimenX9Rig:L_Toe_01_Knuckle_01_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.8284099810968919 0 0"
+		"rotate" " -type \"double3\" -0.82837473147089413 0 0"
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt|SpecimenX9Rig:L_Leg_02_IK_Jnt|SpecimenX9Rig:L_Leg_03_IK_Jnt|SpecimenX9Rig:L_Leg_04_IK_Jnt|SpecimenX9Rig:L_Foot_IK_Jnt|SpecimenX9Rig:L_Toe_01_Knuckle_01_IK_Jnt|SpecimenX9Rig:L_Toe_01_Knuckle_02_IK_Jnt" 
-		"rotate" " -type \"double3\" -1.37661589515779115 1.19026517339971738 52.09253400442351989"
+		"rotate" " -type \"double3\" 0.24288691741053925 0.18458385369651992 0.0053206498080350627"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt|SpecimenX9Rig:L_Leg_02_IK_Jnt|SpecimenX9Rig:L_Leg_03_IK_Jnt|SpecimenX9Rig:L_Leg_04_IK_Jnt|SpecimenX9Rig:L_Foot_IK_Jnt|SpecimenX9Rig:L_Toe_02_Knuckle_01_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.21265568416957725 0 0"
+		"rotate" " -type \"double3\" -0.372066799610906 -0.16115324233387282 0.11536901671592752"
+		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt|SpecimenX9Rig:L_Leg_02_IK_Jnt|SpecimenX9Rig:L_Leg_03_IK_Jnt|SpecimenX9Rig:L_Leg_04_IK_Jnt|SpecimenX9Rig:L_Foot_IK_Jnt|SpecimenX9Rig:L_Toe_02_Knuckle_01_IK_Jnt|SpecimenX9Rig:L_Toe_02_Knuckle_02_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.22768723784707151 0.10658023176737715 61.1539474856621581"
+		"rotate" " -type \"double3\" 0.038417809375182577 0.40483140263448358 -5.80196325556001913"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt|SpecimenX9Rig:L_Leg_02_IK_Jnt|SpecimenX9Rig:L_Leg_03_IK_Jnt|SpecimenX9Rig:L_Leg_04_IK_Jnt|SpecimenX9Rig:L_Foot_IK_Jnt|SpecimenX9Rig:L_Toe_03_Knuckle_01_IK_Jnt" 
-		"rotate" " -type \"double3\" 1.60327540077693764 0 0"
+		"rotate" " -type \"double3\" 1.03530121294422806 -1.07097053379665197 3.22103140705958424"
+		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:L_Leg_01_IK_Jnt|SpecimenX9Rig:L_Leg_02_IK_Jnt|SpecimenX9Rig:L_Leg_03_IK_Jnt|SpecimenX9Rig:L_Leg_04_IK_Jnt|SpecimenX9Rig:L_Foot_IK_Jnt|SpecimenX9Rig:L_Toe_03_Knuckle_01_IK_Jnt|SpecimenX9Rig:L_Toe_03_Knuckle_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 15.77951465664325958 3.05830452500661654 68.33413142521060024"
+		"rotate" " -type \"double3\" -5.24117259643131561 0.28423625772523603 -8.68553263016274713"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt" 
-		"rotate" " -type \"double3\" 15.08679468113309774 0.50423935331555481 37.63307341642292414"
+		"rotate" " -type \"double3\" -12.48800113856689187 -10.12894646084035699 -13.21844100709841463"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt|SpecimenX9Rig:R_Leg_02_IK_Jnt" 
-		"rotate" " -type \"double3\" -4.2551411417126344e-06 0 -15.71667556793769371"
+		"rotate" " -type \"double3\" -3.4484743644339331e-06 0 -12.78181749420160962"
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt|SpecimenX9Rig:R_Leg_02_IK_Jnt|SpecimenX9Rig:R_Leg_03_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.51322730074295309 -0.66677199083163285 14.40324519255079494"
+		"rotate" " -type \"double3\" 0.43038171069143505 -0.53279280222538328 11.71400725241819885"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt|SpecimenX9Rig:R_Leg_02_IK_Jnt|SpecimenX9Rig:R_Leg_03_IK_Jnt|SpecimenX9Rig:R_Leg_04_IK_Jnt|SpecimenX9Rig:R_Foot_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.3582246175250729 -10.90286583334559012 46.77676438606969356"
+		"rotate" " -type \"double3\" -0.82382482309379867 -4.12027067712064188 18.34995532047146938"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt|SpecimenX9Rig:R_Leg_02_IK_Jnt|SpecimenX9Rig:R_Leg_03_IK_Jnt|SpecimenX9Rig:R_Leg_04_IK_Jnt|SpecimenX9Rig:R_Foot_IK_Jnt|SpecimenX9Rig:R_Toe_01_Knuckle_01_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.71290835684628062 0 0"
+		"rotate" " -type \"double3\" -0.71302683864154659 0 0"
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt|SpecimenX9Rig:R_Leg_02_IK_Jnt|SpecimenX9Rig:R_Leg_03_IK_Jnt|SpecimenX9Rig:R_Leg_04_IK_Jnt|SpecimenX9Rig:R_Foot_IK_Jnt|SpecimenX9Rig:R_Toe_01_Knuckle_01_IK_Jnt|SpecimenX9Rig:R_Toe_01_Knuckle_02_IK_Jnt" 
-		"rotate" " -type \"double3\" -1.36774731375077074 1.15341463554809565 52.09407045666678471"
+		"rotate" " -type \"double3\" 0.24597348508282685 0.15849110830505628 0.0064001140192793838"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt|SpecimenX9Rig:R_Leg_02_IK_Jnt|SpecimenX9Rig:R_Leg_03_IK_Jnt|SpecimenX9Rig:R_Leg_04_IK_Jnt|SpecimenX9Rig:R_Foot_IK_Jnt|SpecimenX9Rig:R_Toe_02_Knuckle_01_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.09716249718079524 2.5143151185971573e-07 -2.1318940944239576e-10"
+		"rotate" " -type \"double3\" -0.097263358369269304 2.5169251438120846e-07 -2.1363224898979772e-10"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt|SpecimenX9Rig:R_Leg_02_IK_Jnt|SpecimenX9Rig:R_Leg_03_IK_Jnt|SpecimenX9Rig:R_Leg_04_IK_Jnt|SpecimenX9Rig:R_Foot_IK_Jnt|SpecimenX9Rig:R_Toe_02_Knuckle_01_IK_Jnt|SpecimenX9Rig:R_Toe_02_Knuckle_02_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.2574131776996183 0.099259881451669238 65.56535136463492108"
+		"rotate" " -type \"double3\" -0.11380222970328017 0.014443181573219003 0.0063470163272337839"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt|SpecimenX9Rig:R_Leg_02_IK_Jnt|SpecimenX9Rig:R_Leg_03_IK_Jnt|SpecimenX9Rig:R_Leg_04_IK_Jnt|SpecimenX9Rig:R_Foot_IK_Jnt|SpecimenX9Rig:R_Toe_03_Knuckle_01_IK_Jnt" 
-		"rotate" " -type \"double3\" 1.71878925209226008 -1.5844787309990059e-06 -3.1832508776991288e-06"
+		"rotate" " -type \"double3\" 1.71865237265438364 -1.584356359211256e-06 -3.1829954992449595e-06"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:R_Leg_01_IK_Jnt|SpecimenX9Rig:R_Leg_02_IK_Jnt|SpecimenX9Rig:R_Leg_03_IK_Jnt|SpecimenX9Rig:R_Leg_04_IK_Jnt|SpecimenX9Rig:R_Foot_IK_Jnt|SpecimenX9Rig:R_Toe_03_Knuckle_01_IK_Jnt|SpecimenX9Rig:R_Toe_03_Knuckle_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 17.1110381822585218 3.15277039363734302 71.90660824469331658"
+		"rotate" " -type \"double3\" -2.93922578561604952 -0.45845120850555898 0.10367013161506754"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt" 
-		"rotate" " -type \"double3\" 84.41065519858643995 68.634048604663775 21.36595139533667975"
+		"rotate" " -type \"double3\" -89.8943201444947988 68.04891470202532844 21.46396982842135159"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 2.97153910228854734 0.60448534772720974 -12.40754444341823515"
+		"rotate" " -type \"double3\" 0.11540731364534002 -0.31974253684829745 -4.11396063964433001"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.17500316122465767 -0.033278767850121092 1.4749475978963551"
+		"rotate" " -type \"double3\" 0.3544445576507691 -0.70384204697717534 -6.1459297226023244"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.27026747076307811 0.057220558795015697 -2.37550675372421916"
+		"rotate" " -type \"double3\" 0.17625211054107479 -0.37280489598485389 0.23566083854841591"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.31569963408070151 -0.059055939820978419 2.71865653111640659"
+		"rotate" " -type \"double3\" 0.010076750524760952 -0.026756016848952398 6.02595506284171201"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.14950404110843876 0.029602566326073172 -1.20953118831052042"
+		"rotate" " -type \"double3\" -0.085866658973150919 0.34333807588024395 5.99067753208464726"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.050982152481352877 -0.0098974770676880982 0.42720386534802268"
+		"rotate" " -type \"double3\" -0.076140067611543918 0.90241158069372363 9.4317894489145786"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.029187605261954203 -0.0056037053643204302 0.23731377146713306"
+		"rotate" " -type \"double3\" -0.078525444257742771 1.06453742626780623 0.72215706053138362"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.11859001092586224 0.023841098521483951 -0.99889042041973097"
+		"rotate" " -type \"double3\" -0.048260313592120553 0.58086805980440426 -1.03092538024167668"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.10729488529158365 -0.020689452407863639 0.90618882722904304"
+		"rotate" " -type \"double3\" -0.041976203562128826 -0.8385392616978331 8.06843446300523404"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.15195876654592361 -0.027702818000627037 1.1655889066338414"
+		"rotate" " -type \"double3\" -0.27376649608765735 -1.35300711721171063 9.15743732321053905"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.23988005471737744 0.04786816046694848 -1.9076961102923562"
+		"rotate" " -type \"double3\" -0.53567184186966643 -1.50386206873980677 7.21729059714483068"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.12767692685893561 12.46220995713929369 -1.16933291687647589"
+		"rotate" " -type \"double3\" 0.12935519968365075 1.23273921539696008 11.98015432450535478"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.22323857520541174 11.78011472032814844 2.16365306170352323"
+		"rotate" " -type \"double3\" 0.91495830564359071 -12.00365830034158598 -8.68608496452035439"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt|SpecimenX9Rig:L_Tail_03_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.031285597655374912 1.60857393356133493 2.22829556531214568"
+		"rotate" " -type \"double3\" -0.65897387132977392 11.13157835110190774 -6.75454958566600094"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt|SpecimenX9Rig:L_Tail_03_IK_Jnt|SpecimenX9Rig:L_Tail_04_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.041300859156575165 -2.75477253657481214 -1.71755159121506051"
+		"rotate" " -type \"double3\" -0.59807734250752365 6.04363562026608125 -11.29285064064266386"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt|SpecimenX9Rig:L_Tail_03_IK_Jnt|SpecimenX9Rig:L_Tail_04_IK_Jnt|SpecimenX9Rig:L_Tail_05_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.082087377511381357 -6.8312333821426261 -1.37528978062001728"
+		"rotate" " -type \"double3\" -0.19533314522693804 2.86276090543440276 -7.80514918066093699"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt|SpecimenX9Rig:L_Tail_03_IK_Jnt|SpecimenX9Rig:L_Tail_04_IK_Jnt|SpecimenX9Rig:L_Tail_05_IK_Jnt|SpecimenX9Rig:L_Tail_06_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.060413088360599831 -3.40141314488524316 2.0344691600225806"
+		"rotate" " -type \"double3\" -0.22167738506945583 3.71850421813227028 -6.8208810159525175"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt|SpecimenX9Rig:L_Tail_03_IK_Jnt|SpecimenX9Rig:L_Tail_04_IK_Jnt|SpecimenX9Rig:L_Tail_05_IK_Jnt|SpecimenX9Rig:L_Tail_06_IK_Jnt|SpecimenX9Rig:L_Tail_07_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.01916490079819962 1.3047953944251649 -1.68293288674618879"
+		"rotate" " -type \"double3\" -0.33712371954290993 4.84931362075631878 -7.94888472224126197"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt|SpecimenX9Rig:L_Tail_03_IK_Jnt|SpecimenX9Rig:L_Tail_04_IK_Jnt|SpecimenX9Rig:L_Tail_05_IK_Jnt|SpecimenX9Rig:L_Tail_06_IK_Jnt|SpecimenX9Rig:L_Tail_07_IK_Jnt|SpecimenX9Rig:L_Tail_08_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.00016677937861490791 0.024189211343376274 0.79007147409211931"
+		"rotate" " -type \"double3\" -0.17670686549419704 3.67885547667500834 -5.49807919546995372"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt|SpecimenX9Rig:L_Tail_03_IK_Jnt|SpecimenX9Rig:L_Tail_04_IK_Jnt|SpecimenX9Rig:L_Tail_05_IK_Jnt|SpecimenX9Rig:L_Tail_06_IK_Jnt|SpecimenX9Rig:L_Tail_07_IK_Jnt|SpecimenX9Rig:L_Tail_08_IK_Jnt|SpecimenX9Rig:L_Tail_09_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.012303245953389899 0.96508476271650367 -1.46074054597906788"
+		"rotate" " -type \"double3\" -0.17345790586581158 3.63683108166358871 -5.45945528130850466"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt|SpecimenX9Rig:L_Tail_03_IK_Jnt|SpecimenX9Rig:L_Tail_04_IK_Jnt|SpecimenX9Rig:L_Tail_05_IK_Jnt|SpecimenX9Rig:L_Tail_06_IK_Jnt|SpecimenX9Rig:L_Tail_07_IK_Jnt|SpecimenX9Rig:L_Tail_08_IK_Jnt|SpecimenX9Rig:L_Tail_09_IK_Jnt|SpecimenX9Rig:L_Tail_10_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.014656609596726305 -0.53214646916001085 3.15531022385192328"
+		"rotate" " -type \"double3\" -0.022353144871386371 2.35131483440550015 -1.08919702485390313"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:L_Tail_01_IK_Jnt|SpecimenX9Rig:L_Tail_02_IK_Jnt|SpecimenX9Rig:L_Tail_03_IK_Jnt|SpecimenX9Rig:L_Tail_04_IK_Jnt|SpecimenX9Rig:L_Tail_05_IK_Jnt|SpecimenX9Rig:L_Tail_06_IK_Jnt|SpecimenX9Rig:L_Tail_07_IK_Jnt|SpecimenX9Rig:L_Tail_08_IK_Jnt|SpecimenX9Rig:L_Tail_09_IK_Jnt|SpecimenX9Rig:L_Tail_10_IK_Jnt|SpecimenX9Rig:L_Tail_11_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.21779949245320848 -1.58956355969590035 15.60301886580967512"
+		"rotate" " -type \"double3\" 0.11913835798721732 2.40433323722987735 5.67271586159400609"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.053999016883066665 28.74077111620182734 0.20885861813279252"
+		"rotate" " -type \"double3\" 0.13434058326841783 1.14718508437035016 13.35305522518892829"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.048729077115857694 -8.43819081624268641 -0.66054242645162697"
+		"rotate" " -type \"double3\" 0.80344513531634232 -11.28399155156419198 -8.11930179847808553"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt|SpecimenX9Rig:R_Tail_03_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.011989565167395801 0.69137150713598283 1.98588050660915094"
+		"rotate" " -type \"double3\" -0.39637071293859089 6.57886086180495333 -6.88912953755702429"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt|SpecimenX9Rig:R_Tail_03_IK_Jnt|SpecimenX9Rig:R_Tail_04_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.019015736056365126 -1.52893286444618148 -1.42689215408429337"
+		"rotate" " -type \"double3\" 0.17045617085128015 -1.82050322748115145 -10.69912998583455455"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt|SpecimenX9Rig:R_Tail_03_IK_Jnt|SpecimenX9Rig:R_Tail_04_IK_Jnt|SpecimenX9Rig:R_Tail_05_IK_Jnt" 
-		"rotate" " -type \"double3\" 0.027336651823912435 -4.10245022711152263 -0.7632426245934183"
+		"rotate" " -type \"double3\" 0.18711310363478742 -2.84460335061274172 -7.5252570571790649"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt|SpecimenX9Rig:R_Tail_03_IK_Jnt|SpecimenX9Rig:R_Tail_04_IK_Jnt|SpecimenX9Rig:R_Tail_05_IK_Jnt|SpecimenX9Rig:R_Tail_06_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.047912318781951187 -2.40796761227465961 2.27978619359455958"
+		"rotate" " -type \"double3\" 0.14804282409690639 -2.42621566335848593 -6.98350513465773037"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt|SpecimenX9Rig:R_Tail_03_IK_Jnt|SpecimenX9Rig:R_Tail_04_IK_Jnt|SpecimenX9Rig:R_Tail_05_IK_Jnt|SpecimenX9Rig:R_Tail_06_IK_Jnt|SpecimenX9Rig:R_Tail_07_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.019136596273460382 1.26115641166692138 -1.74037966832263802"
+		"rotate" " -type \"double3\" 0.065641184058735549 -0.90924026135082714 -8.26004810866627714"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt|SpecimenX9Rig:R_Tail_03_IK_Jnt|SpecimenX9Rig:R_Tail_04_IK_Jnt|SpecimenX9Rig:R_Tail_05_IK_Jnt|SpecimenX9Rig:R_Tail_06_IK_Jnt|SpecimenX9Rig:R_Tail_07_IK_Jnt|SpecimenX9Rig:R_Tail_08_IK_Jnt" 
-		"rotate" " -type \"double3\" 7.602385356313425e-05 0.011057260013961323 0.78764730824473783"
+		"rotate" " -type \"double3\" 0.081204476780051063 -1.57403519127941771 -5.90638338986777089"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt|SpecimenX9Rig:R_Tail_03_IK_Jnt|SpecimenX9Rig:R_Tail_04_IK_Jnt|SpecimenX9Rig:R_Tail_05_IK_Jnt|SpecimenX9Rig:R_Tail_06_IK_Jnt|SpecimenX9Rig:R_Tail_07_IK_Jnt|SpecimenX9Rig:R_Tail_08_IK_Jnt|SpecimenX9Rig:R_Tail_09_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.01144697204259388 0.86552984586912074 -1.51473171865930567"
+		"rotate" " -type \"double3\" 0.03834966764861443 -0.74771850356099623 -5.87504883046485826"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt|SpecimenX9Rig:R_Tail_03_IK_Jnt|SpecimenX9Rig:R_Tail_04_IK_Jnt|SpecimenX9Rig:R_Tail_05_IK_Jnt|SpecimenX9Rig:R_Tail_06_IK_Jnt|SpecimenX9Rig:R_Tail_07_IK_Jnt|SpecimenX9Rig:R_Tail_08_IK_Jnt|SpecimenX9Rig:R_Tail_09_IK_Jnt|SpecimenX9Rig:R_Tail_10_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.011923439817230722 -0.42356212262230691 3.22568933700955407"
+		"rotate" " -type \"double3\" 0.012747200223855497 -0.92853387621895678 -1.57370473917871467"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Skeleton|SpecimenX9Rig:Root_Jnt|SpecimenX9Rig:COG_Jnt|SpecimenX9Rig:Pelvis_FK_Jnt|SpecimenX9Rig:Tail_01_IK_Jnt|SpecimenX9Rig:Tail_02_IK_Jnt|SpecimenX9Rig:Tail_03_IK_Jnt|SpecimenX9Rig:Tail_04_IK_Jnt|SpecimenX9Rig:Tail_05_IK_Jnt|SpecimenX9Rig:Tail_06_IK_Jnt|SpecimenX9Rig:Tail_07_IK_Jnt|SpecimenX9Rig:Tail_08_IK_Jnt|SpecimenX9Rig:Tail_09_IK_Jnt|SpecimenX9Rig:Tail_10_IK_Jnt|SpecimenX9Rig:Tail_11_IK_Jnt|SpecimenX9Rig:Tail_12_IK_Jnt|SpecimenX9Rig:Tail_13_IK_Jnt|SpecimenX9Rig:R_Tail_01_IK_Jnt|SpecimenX9Rig:R_Tail_02_IK_Jnt|SpecimenX9Rig:R_Tail_03_IK_Jnt|SpecimenX9Rig:R_Tail_04_IK_Jnt|SpecimenX9Rig:R_Tail_05_IK_Jnt|SpecimenX9Rig:R_Tail_06_IK_Jnt|SpecimenX9Rig:R_Tail_07_IK_Jnt|SpecimenX9Rig:R_Tail_08_IK_Jnt|SpecimenX9Rig:R_Tail_09_IK_Jnt|SpecimenX9Rig:R_Tail_10_IK_Jnt|SpecimenX9Rig:R_Tail_11_IK_Jnt" 
-		"rotate" " -type \"double3\" -0.12360325163985306 -0.89599187988797568 15.70714105661842019"
+		"rotate" " -type \"double3\" -0.030661971425577868 -0.71486347680003781 4.91053918132078593"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Controls|SpecimenX9Rig:Transform_Ctrl_Grp|SpecimenX9Rig:Transform_Ctrl" 
 		"Tail_IKFK" " -k 1"
@@ -43634,22 +43636,22 @@ createNode reference -n "SpecimenX9RigRN";
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Controls|SpecimenX9Rig:Tail_Ctrl_Grp|SpecimenX9Rig:Tail_IK_Ctrl_Grp|SpecimenX9Rig:R_Tail_01_IK_Ctrl_Grp|SpecimenX9Rig:R_Tail_01_IK_Ctrl" 
 		"Operating_Space" " -k 1"
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Deformers|SpecimenX9Rig:Tail_IK_Curve_Grp|SpecimenX9Rig:Main_Tail_IK_Handle" 
-		"translate" " -type \"double3\" -0.051176660400762533 20.39298824639107366 1.16033288561942949"
+		"translate" " -type \"double3\" 0.034174495949756856 2.35015094773649347 -4.59715049256343633"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Deformers|SpecimenX9Rig:Tail_IK_Curve_Grp|SpecimenX9Rig:Main_Tail_IK_Handle" 
-		"rotate" " -type \"double3\" -93.5207433287967973 -11.26444129802689353 90.68856704216314313"
+		"rotate" " -type \"double3\" 82.54068947425143676 70.24425724411474903 82.9752070791833205"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Deformers|SpecimenX9Rig:Tail_IK_Curve_Grp|SpecimenX9Rig:L_Tail_IK_Handle" 
-		"translate" " -type \"double3\" 0.44410075606435168 24.16892437263181037 1.86546559105843079"
+		"translate" " -type \"double3\" -0.064062669950623277 2.161214052347181 -8.16292119419863837"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Deformers|SpecimenX9Rig:Tail_IK_Curve_Grp|SpecimenX9Rig:L_Tail_IK_Handle" 
-		"rotate" " -type \"double3\" -92.78215951700769892 -2.8461352949408858 83.75510875109492304"
+		"rotate" " -type \"double3\" 56.42814868802718564 129.7129325990403288 53.90379991216256172"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Deformers|SpecimenX9Rig:Tail_IK_Curve_Grp|SpecimenX9Rig:R_Tail_IK_Handle" 
-		"translate" " -type \"double3\" -0.63577013465313648 24.16178898717725332 1.84903809911446371"
+		"translate" " -type \"double3\" -0.77096565642802006 2.18079553803865878 -8.15855893238397201"
 		
 		2 "|SpecimenX9Rig:SpecimenX9|SpecimenX9Rig:Deformers|SpecimenX9Rig:Tail_IK_Curve_Grp|SpecimenX9Rig:R_Tail_IK_Handle" 
-		"rotate" " -type \"double3\" 94.06546673441896189 2.54594501402655293 -82.65264901995445257"
+		"rotate" " -type \"double3\" 119.26027654452961713 -52.22865965679297773 68.78696083516106796"
 		
 		2 "SpecimenX9Rig:Geo" "displayType" " 2"
 		2 "SpecimenX9Rig:Joints" "visibility" " 0"
@@ -67112,9 +67114,11 @@ createNode gameFbxExporter -n "gameExporterPreset2";
 	setAttr ".ac[6].acn" -type "string" "Enter Vent";
 	setAttr ".ac[6].acs" 525;
 	setAttr ".ac[6].ace" 592;
+	setAttr ".ac[6].eac" no;
 	setAttr ".ac[7].acn" -type "string" "Exit Vent";
 	setAttr ".ac[7].acs" 600;
 	setAttr ".ac[7].ace" 672;
+	setAttr ".ac[7].eac" no;
 	setAttr ".spt" 2;
 	setAttr ".ic" no;
 	setAttr ".ebm" yes;
@@ -70965,11 +70969,11 @@ createNode animCurveTU -n "Vent_scaleZ";
 	setAttr ".tan" 10;
 	setAttr ".ktv[0]"  634 3.5;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "AC5A7A3E-41FC-92DF-902D-45843152BA16";
+	rename -uid "A7065DBD-4981-06E7-5999-AAAD4019D17F";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
-	setAttr ".o" 600;
-	setAttr ".unw" 600;
+	setAttr ".o" 672;
+	setAttr ".unw" 672;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
