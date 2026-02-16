@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: AlienPlayerDeathAnims.ma
-//Last modified: Sun, Feb 15, 2026 11:05:20 PM
+//Last modified: Mon, Feb 16, 2026 11:57:21 AM
 //Codeset: 1252
 file -rdi 1 -ns "EntityX9Rig" -rfn "EntityX9RigRN" -op "v=0;p=17" -typ "mayaAscii"
 		 "E:/GitRepos/ProjectXenosRevivalAssets//Assets/Characters/Creatures/EntityX9/EntityX9Rig.ma";
@@ -13,6 +13,7 @@ file -r -ns "PlayerArms_SKM" -dr 1 -rfn "PlayerArms_SKMRN" -op "v=0;p=17" -typ "
 requires maya "2024";
 requires -nodeType "ikSpringSolver" "ikSpringSolver" "1.0";
 requires "stereoCamera" "10.0";
+requires -nodeType "gameFbxExporter" "gameFbxExporter" "1.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
 requires -nodeType "mayaUsdLayerManager" -dataType "pxrUsdStageData" "mayaUsdPlugin" "0.25.0";
 requires "stereoCamera" "10.0";
@@ -22,21 +23,21 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202511121304-3e6f4fc3f6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "6E62663F-4C5B-46CF-26E7-D681A6F8A8B6";
+fileInfo "UUID" "10913953-4F38-8BBC-2E62-158ACB5C7F63";
 createNode transform -s -n "persp";
 	rename -uid "12A951D1-49BB-EC15-A1FA-BCA9AFE033A1";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -5.0657505118152812 2.1066435823555913 22.0644648839504 ;
-	setAttr ".r" -type "double3" 8.0616472712971277 -1450.1999999984405 1.0098839396401208e-16 ;
+	setAttr ".t" -type "double3" 15.768998861907875 3.8606968350711055 7.5772140364609069 ;
+	setAttr ".r" -type "double3" 1.461647273468127 63.000000000000014 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "93CB812E-4A0E-5B83-0B29-558C2E6126C6";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 22.685147645554984;
+	setAttr ".coi" 19.198016629466004;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" -0.96562752039646826 3.4433151229681229 -0.90085299630416715 ;
+	setAttr ".tp" -type "double3" 2.1194053210179034 4.2416893372762017 -3.2112028534540578 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "A3DBBE92-42E8-9679-F831-45941421AF55";
@@ -98,7 +99,7 @@ createNode camera -n "PlayerCamShape" -p "PlayerCam";
 	setAttr ".cap" -type "double2" 1.41732 0.94488 ;
 	setAttr ".ff" 0;
 	setAttr ".fl" 18;
-	setAttr ".coi" 7.3820272945280658;
+	setAttr ".coi" 9.9999997473787533e-06;
 	setAttr ".ow" 30;
 	setAttr ".imn" -type "string" "camera1";
 	setAttr ".den" -type "string" "camera1_depth";
@@ -122,12 +123,12 @@ createNode parentConstraint -n "PlayerCam_parentConstraint1" -p "PlayerCam";
 	setAttr ".tg[0].tot" -type "double3" 5.6843418860808015e-14 5.6843418860808015e-14 
 		0 ;
 	setAttr ".tg[0].tor" -type "double3" 89.01455913266301 89.999999999999886 0 ;
-	setAttr ".lr" -type "double3" 2.4017781197233541 5.1237269707086819 -0.67877162127721213 ;
+	setAttr ".lr" -type "double3" 1.272221872585407e-14 -1.272221872585407e-14 -1.4124500153760515e-30 ;
 	setAttr ".rst" -type "double3" 7.2684047726049326e-15 5.0010841066187348 5.0287780896803813 ;
 	setAttr ".rsrr" -type "double3" 1.272221872585407e-14 -1.272221872585407e-14 -1.4124500153760515e-30 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "PlayerArms_SKMRNfosterParent1";
-	rename -uid "9909849A-4740-689D-D49A-0CA904AB3F35";
+	rename -uid "DE67DB87-4BB7-7FF5-3455-8B951F87E4D0";
 createNode parentConstraint -n "Chest_Ctrl_parentConstraint1" -p "PlayerArms_SKMRNfosterParent1";
 	rename -uid "83EC55DB-4D91-65CE-5BBB-F08B7B0FFBDD";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Arm_IK_CtrlW0" -dv 1 -min 0 -at "double";
@@ -149,15 +150,15 @@ createNode parentConstraint -n "Chest_Ctrl_parentConstraint1" -p "PlayerArms_SKM
 	setAttr ".tg[0].tor" -type "double3" -118.45765574115079 -64.544011031446587 84.531844543551841 ;
 	setAttr ".tg[1].tot" -type "double3" -1.1109985362174335 -0.91451315749940909 0.51941637176891586 ;
 	setAttr ".tg[1].tor" -type "double3" -56.58515363111885 -63.737407458362043 92.364399757952512 ;
-	setAttr ".lr" -type "double3" 9.1605348268830724 2.7526511766070123 -1.1132385210082221 ;
+	setAttr ".lr" -type "double3" -3.1043535949374877e-14 9.3997551172855908e-15 11.071990360900948 ;
 	setAttr ".rst" -type "double3" -4.2632564145606011e-14 3.5527136788005009e-15 -1.3280615893002274e-14 ;
 	setAttr ".rsrr" -type "double3" -7.9513867036587919e-15 7.9513867036587919e-15 -1.5902773407317592e-15 ;
 	setAttr -k on ".w0";
 	setAttr -k on ".w1";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "4A74FA70-40C3-C94D-E142-7ABBF0D3F820";
-	setAttr -s 12 ".lnk";
-	setAttr -s 12 ".slnk";
+	setAttr -s 21 ".lnk";
+	setAttr -s 21 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
 	rename -uid "AD28F1C2-49F9-829F-4B2F-66BC6016B8D7";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
@@ -978,7 +979,957 @@ createNode reference -n "EntityX9RigRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"EntityX9RigRN"
 		"EntityX9RigRN" 0
-		"EntityX9RigRN" 828
+		"EntityX9RigRN" 1296
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:SpecimenX9LowPoly|EntityX9Rig:SpecimenX9LowPolyShape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:SpecimenX9LowPoly|EntityX9Rig:SpecimenX9LowPolyShape" 
+		"uvPivot" " -type \"double2\" 1.5 0.5"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:MouthTendons|EntityX9Rig:L_MouthTendon|EntityX9Rig:L_MouthTendonShape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:MouthTendons|EntityX9Rig:L_MouthTendon|EntityX9Rig:L_MouthTendonShape" 
+		"uvPivot" " -type \"double2\" 0.3503572940826416 0.69040060043334961"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:MouthTendons|EntityX9Rig:R_MouthTendon|EntityX9Rig:R_MouthTendonShape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:MouthTendons|EntityX9Rig:R_MouthTendon|EntityX9Rig:R_MouthTendonShape" 
+		"uvPivot" " -type \"double2\" 0.3503572940826416 0.8284638524055481"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_01|EntityX9Rig:R_UpperTooth_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_01|EntityX9Rig:R_UpperTooth_01Shape" 
+		"uvPivot" " -type \"double2\" 0.72849392890930176 0.64680689573287964"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_02|EntityX9Rig:R_UpperTooth_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_02|EntityX9Rig:R_UpperTooth_02Shape" 
+		"uvPivot" " -type \"double2\" 0.72849392890930176 0.69764220714569092"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_03|EntityX9Rig:R_UpperTooth_5284Shape3" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_03|EntityX9Rig:R_UpperTooth_5284Shape3" 
+		"uvPivot" " -type \"double2\" 0.64691764116287231 0.65343010425567627"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_04|EntityX9Rig:R_UpperTooth_5284Shape4" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_04|EntityX9Rig:R_UpperTooth_5284Shape4" 
+		"uvPivot" " -type \"double2\" 0.50165718793869019 0.65095257759094238"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_05|EntityX9Rig:R_UpperTooth_5284Shape5" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_05|EntityX9Rig:R_UpperTooth_5284Shape5" 
+		"uvPivot" " -type \"double2\" 0.93212637305259705 0.71669721603393555"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_06|EntityX9Rig:R_UpperTooth_5284Shape6" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_UpperTeeth|EntityX9Rig:R_UpperTooth_06|EntityX9Rig:R_UpperTooth_5284Shape6" 
+		"uvPivot" " -type \"double2\" 0.93212640285491943 0.75698691606521606"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_01|EntityX9Rig:L_UpperTooth_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_01|EntityX9Rig:L_UpperTooth_01Shape" 
+		"uvPivot" " -type \"double2\" 0.78611144423484802 0.64680683612823486"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_02|EntityX9Rig:L_UpperTooth_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_02|EntityX9Rig:L_UpperTooth_02Shape" 
+		"uvPivot" " -type \"double2\" 0.78611144423484802 0.69764220714569092"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_03|EntityX9Rig:L_UpperTooth_5284Shape3" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_03|EntityX9Rig:L_UpperTooth_5284Shape3" 
+		"uvPivot" " -type \"double2\" 0.64691764116287231 0.71764934062957764"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_04|EntityX9Rig:L_UpperTooth_5284Shape4" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_04|EntityX9Rig:L_UpperTooth_5284Shape4" 
+		"uvPivot" " -type \"double2\" 0.5016571432352066 0.71007734537124634"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_05|EntityX9Rig:L_UpperTooth_5284Shape5" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_05|EntityX9Rig:L_UpperTooth_5284Shape5" 
+		"uvPivot" " -type \"double2\" 0.93212643265724182 0.79727667570114136"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_06|EntityX9Rig:L_UpperTooth_5284Shape6" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_UpperTeeth|EntityX9Rig:L_UpperTooth_06|EntityX9Rig:L_UpperTooth_5284Shape6" 
+		"uvPivot" " -type \"double2\" 0.97637197375297546 0.71669727563858032"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_01|EntityX9Rig:R_LowerTooth_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_01|EntityX9Rig:R_LowerTooth_01Shape" 
+		"uvPivot" " -type \"double2\" 0.7253691554069519 0.74552661180496216"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_02|EntityX9Rig:R_LowerTooth_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_02|EntityX9Rig:R_LowerTooth_02Shape" 
+		"uvPivot" " -type \"double2\" 0.72536912560462952 0.790924072265625"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_03|EntityX9Rig:R_LowerTooth_5284Shape3" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_03|EntityX9Rig:R_LowerTooth_5284Shape3" 
+		"uvPivot" " -type \"double2\" 0.86377084255218506 0.72650563716888428"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_04|EntityX9Rig:R_LowerTooth_5284Shape4" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_04|EntityX9Rig:R_LowerTooth_5284Shape4" 
+		"uvPivot" " -type \"double2\" 0.56537407636642456 0.65095257759094238"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_05|EntityX9Rig:R_LowerTooth_5284Shape5" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_05|EntityX9Rig:R_LowerTooth_5284Shape5" 
+		"uvPivot" " -type \"double2\" 0.97637197375297546 0.75698691606521606"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_06|EntityX9Rig:R_LowerTooth_5284Shape6" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:R_LowerTeeth|EntityX9Rig:R_LowerTooth_06|EntityX9Rig:R_LowerTooth_5284Shape6" 
+		"uvPivot" " -type \"double2\" 0.48975403606891632 0.75795143842697144"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_01|EntityX9Rig:L_LowerTooth_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_01|EntityX9Rig:L_LowerTooth_01Shape" 
+		"uvPivot" " -type \"double2\" 0.77678880095481873 0.74552661180496216"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_02|EntityX9Rig:L_LowerTooth_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_02|EntityX9Rig:L_LowerTooth_02Shape" 
+		"uvPivot" " -type \"double2\" 0.77678877115249634 0.790924072265625"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_03|EntityX9Rig:L_LowerTooth_5284Shape3" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_03|EntityX9Rig:L_LowerTooth_5284Shape3" 
+		"uvPivot" " -type \"double2\" 0.86377084255218506 0.78655588626861572"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_04|EntityX9Rig:L_LowerTooth_5284Shape4" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_04|EntityX9Rig:L_LowerTooth_5284Shape4" 
+		"uvPivot" " -type \"double2\" 0.56537401676177979 0.71007734537124634"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_05|EntityX9Rig:L_LowerTooth_5284Shape5" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_05|EntityX9Rig:L_LowerTooth_5284Shape5" 
+		"uvPivot" " -type \"double2\" 0.97637197375297546 0.79727667570114136"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_06|EntityX9Rig:L_LowerTooth_5284Shape6" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Teeth|EntityX9Rig:L_LowerTeeth|EntityX9Rig:L_LowerTooth_06|EntityX9Rig:L_LowerTooth_5284Shape6" 
+		"uvPivot" " -type \"double2\" 0.5296751856803894 0.75795137882232666"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:R_Hand_Claws|EntityX9Rig:R_HandClaw_01|EntityX9Rig:R_HandClaw_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:R_Hand_Claws|EntityX9Rig:R_HandClaw_01|EntityX9Rig:R_HandClaw_01Shape" 
+		"uvPivot" " -type \"double2\" 2.81415295600891113 0.80467468500137329"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:R_Hand_Claws|EntityX9Rig:R_HandClaw_02|EntityX9Rig:R_HandClaw_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:R_Hand_Claws|EntityX9Rig:R_HandClaw_02|EntityX9Rig:R_HandClaw_02Shape" 
+		"uvPivot" " -type \"double2\" 2.81415295600891113 0.87123221158981323"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:R_Hand_Claws|EntityX9Rig:R_HandClaw_03|EntityX9Rig:R_HandClaw_03Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:R_Hand_Claws|EntityX9Rig:R_HandClaw_03|EntityX9Rig:R_HandClaw_03Shape" 
+		"uvPivot" " -type \"double2\" 2.85831904411315918 0.80467468500137329"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:R_Hand_Claws|EntityX9Rig:R_HandClaw_04|EntityX9Rig:R_HandClaw_04Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:R_Hand_Claws|EntityX9Rig:R_HandClaw_04|EntityX9Rig:R_HandClaw_04Shape" 
+		"uvPivot" " -type \"double2\" 2.85831904411315918 0.87123221158981323"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:L_Hand_Claws|EntityX9Rig:L_HandClaw_01|EntityX9Rig:L_HandClaw_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:L_Hand_Claws|EntityX9Rig:L_HandClaw_01|EntityX9Rig:L_HandClaw_01Shape" 
+		"uvPivot" " -type \"double2\" 2.90248584747314453 0.80467468500137329"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:L_Hand_Claws|EntityX9Rig:L_HandClaw_02|EntityX9Rig:L_HandClaw_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:L_Hand_Claws|EntityX9Rig:L_HandClaw_02|EntityX9Rig:L_HandClaw_02Shape" 
+		"uvPivot" " -type \"double2\" 2.90248560905456543 0.87123221158981323"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:L_Hand_Claws|EntityX9Rig:L_HandClaw_03|EntityX9Rig:L_HandClaw_03Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:L_Hand_Claws|EntityX9Rig:L_HandClaw_03|EntityX9Rig:L_HandClaw_03Shape" 
+		"uvPivot" " -type \"double2\" 2.94665265083312988 0.80467468500137329"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:L_Hand_Claws|EntityX9Rig:L_HandClaw_04|EntityX9Rig:L_HandClaw_04Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:HandClaws|EntityX9Rig:L_Hand_Claws|EntityX9Rig:L_HandClaw_04|EntityX9Rig:L_HandClaw_04Shape" 
+		"uvPivot" " -type \"double2\" 2.94665265083312988 0.87123215198516846"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:R_Foot_Claws|EntityX9Rig:R_FootClaw_01|EntityX9Rig:R_FootClaw_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:R_Foot_Claws|EntityX9Rig:R_FootClaw_01|EntityX9Rig:R_FootClaw_01Shape" 
+		"uvPivot" " -type \"double2\" 2.63273429870605469 0.48387610912322998"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:R_Foot_Claws|EntityX9Rig:R_FootClaw_02|EntityX9Rig:R_FootClaw_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:R_Foot_Claws|EntityX9Rig:R_FootClaw_02|EntityX9Rig:R_FootClaw_02Shape" 
+		"uvPivot" " -type \"double2\" 2.91059732437133789 0.32368510961532593"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:R_Foot_Claws|EntityX9Rig:R_FootClaw_03|EntityX9Rig:R_FootClaw_03Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:R_Foot_Claws|EntityX9Rig:R_FootClaw_03|EntityX9Rig:R_FootClaw_03Shape" 
+		"uvPivot" " -type \"double2\" 2.91059732437133789 0.38285236060619354"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:L_Foot_Claws|EntityX9Rig:L_FootClaw_01|EntityX9Rig:L_FootClaw_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:L_Foot_Claws|EntityX9Rig:L_FootClaw_01|EntityX9Rig:L_FootClaw_01Shape" 
+		"uvPivot" " -type \"double2\" 2.69022524356842041 0.48387607932090759"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:L_Foot_Claws|EntityX9Rig:L_FootClaw_02|EntityX9Rig:L_FootClaw_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:L_Foot_Claws|EntityX9Rig:L_FootClaw_02|EntityX9Rig:L_FootClaw_02Shape" 
+		"uvPivot" " -type \"double2\" 2.94966864585876465 0.32368510961532593"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:L_Foot_Claws|EntityX9Rig:L_FootClaw_03|EntityX9Rig:L_FootClaw_03Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:FootClaws|EntityX9Rig:L_Foot_Claws|EntityX9Rig:L_FootClaw_03|EntityX9Rig:L_FootClaw_03Shape" 
+		"uvPivot" " -type \"double2\" 2.94966864585876465 0.38285237550735474"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_01|EntityX9Rig:BackSpike_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_01|EntityX9Rig:BackSpike_01Shape" 
+		"uvPivot" " -type \"double2\" 3.68269169330596924 0.83624047040939331"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_02|EntityX9Rig:BackSpike_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_02|EntityX9Rig:BackSpike_02Shape" 
+		"uvPivot" " -type \"double2\" 3.5454714298248291 0.70237690210342407"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_04|EntityX9Rig:BackSpike_04Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_04|EntityX9Rig:BackSpike_04Shape" 
+		"uvPivot" " -type \"double2\" 3.54874086380004883 0.57697635889053345"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_07|EntityX9Rig:BackSpike_07Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_07|EntityX9Rig:BackSpike_07Shape" 
+		"uvPivot" " -type \"double2\" 3.88279259204864502 0.25570017099380493"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_11|EntityX9Rig:BackSpike_11Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_11|EntityX9Rig:BackSpike_11Shape" 
+		"uvPivot" " -type \"double2\" 3.03612232208251953 0.13830903172492981"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_12|EntityX9Rig:BackSpike_12Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_12|EntityX9Rig:BackSpike_12Shape" 
+		"uvPivot" " -type \"double2\" 3.43588376045227051 0.6194223165512085"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_14|EntityX9Rig:BackSpike_14Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_14|EntityX9Rig:BackSpike_14Shape" 
+		"uvPivot" " -type \"double2\" 3.10808372497558594 0.13830901682376862"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_15|EntityX9Rig:BackSpike_15Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_15|EntityX9Rig:BackSpike_15Shape" 
+		"uvPivot" " -type \"double2\" 3.30709028244018555 0.61263726651668549"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_16|EntityX9Rig:BackSpike_16Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_16|EntityX9Rig:BackSpike_16Shape" 
+		"uvPivot" " -type \"double2\" 3.18004524707794189 0.13830901682376862"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_17|EntityX9Rig:BackSpike_17Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_17|EntityX9Rig:BackSpike_17Shape" 
+		"uvPivot" " -type \"double2\" 3.55790507793426514 0.38819286227226257"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_19|EntityX9Rig:BackSpike_19Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_19|EntityX9Rig:BackSpike_19Shape" 
+		"uvPivot" " -type \"double2\" 3.25200676918029785 0.13830901682376862"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_21|EntityX9Rig:BackSpike_21Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_21|EntityX9Rig:BackSpike_21Shape" 
+		"uvPivot" " -type \"double2\" 3.62482774257659912 0.38819281756877899"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_22|EntityX9Rig:BackSpike_22Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_22|EntityX9Rig:BackSpike_22Shape" 
+		"uvPivot" " -type \"double2\" 3.3851853609085083 0.38302862644195557"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_23|EntityX9Rig:BackSpike_23Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_23|EntityX9Rig:BackSpike_23Shape" 
+		"uvPivot" " -type \"double2\" 3.14701449871063232 0.68738967180252075"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_25|EntityX9Rig:BackSpike_25Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_25|EntityX9Rig:BackSpike_25Shape" 
+		"uvPivot" " -type \"double2\" 3.02978146076202393 0.69519728422164917"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_27|EntityX9Rig:BackSpike_27Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_27|EntityX9Rig:BackSpike_27Shape" 
+		"uvPivot" " -type \"double2\" 3.14592814445495605 0.86188751459121704"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_28|EntityX9Rig:BackSpike_28Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_28|EntityX9Rig:BackSpike_28Shape" 
+		"uvPivot" " -type \"double2\" 3.89038300514221191 0.56769090890884399"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_30|EntityX9Rig:BackSpike_30Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_30|EntityX9Rig:BackSpike_30Shape" 
+		"uvPivot" " -type \"double2\" 3.74030566215515137 0.57518303394317627"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_31|EntityX9Rig:BackSpike_31Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_31|EntityX9Rig:BackSpike_31Shape" 
+		"uvPivot" " -type \"double2\" 3.77752363681793213 0.57518297433853149"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_32|EntityX9Rig:BackSpike_32Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_32|EntityX9Rig:BackSpike_32Shape" 
+		"uvPivot" " -type \"double2\" 3.01578640937805176 0.85734289884567261"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_33|EntityX9Rig:BackSpike_33Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_33|EntityX9Rig:BackSpike_33Shape" 
+		"uvPivot" " -type \"double2\" 3.04700279235839844 0.85734283924102783"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_39|EntityX9Rig:BackSpike_39Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_39|EntityX9Rig:BackSpike_39Shape" 
+		"uvPivot" " -type \"double2\" 3.32396829128265381 0.13830901682376862"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_40|EntityX9Rig:BackSpike_40Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_40|EntityX9Rig:BackSpike_40Shape" 
+		"uvPivot" " -type \"double2\" 3.82598972320556641 0.29436513781547546"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_41|EntityX9Rig:BackSpike_41Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_41|EntityX9Rig:BackSpike_41Shape" 
+		"uvPivot" " -type \"double2\" 3.95253896713256836 0.41403600573539734"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_42|EntityX9Rig:BackSpike_42Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_42|EntityX9Rig:BackSpike_42Shape" 
+		"uvPivot" " -type \"double2\" 3.49978649616241455 0.3281128853559494"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_43|EntityX9Rig:BackSpike_43Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_43|EntityX9Rig:BackSpike_43Shape" 
+		"uvPivot" " -type \"double2\" 3.807655930519104 0.45541946589946747"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_44|EntityX9Rig:BackSpike_44Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_44|EntityX9Rig:BackSpike_44Shape" 
+		"uvPivot" " -type \"double2\" 3.39592969417572021 0.13830901682376862"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_45|EntityX9Rig:BackSpike_45Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_45|EntityX9Rig:BackSpike_45Shape" 
+		"uvPivot" " -type \"double2\" 3.46789109706878662 0.13830901682376862"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_46|EntityX9Rig:BackSpike_46Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_46|EntityX9Rig:BackSpike_46Shape" 
+		"uvPivot" " -type \"double2\" 3.87630164623260498 0.7497248649597168"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_47|EntityX9Rig:BackSpike_47Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_47|EntityX9Rig:BackSpike_47Shape" 
+		"uvPivot" " -type \"double2\" 3.9328305721282959 0.71973401308059692"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_48|EntityX9Rig:BackSpike_48Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_48|EntityX9Rig:BackSpike_48Shape" 
+		"uvPivot" " -type \"double2\" 3.55611777305603027 0.816947340965271"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_49|EntityX9Rig:BackSpike_49Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_49|EntityX9Rig:BackSpike_49Shape" 
+		"uvPivot" " -type \"double2\" 3.70861542224884033 0.83624047040939331"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_50|EntityX9Rig:BackSpike_50Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_50|EntityX9Rig:BackSpike_50Shape" 
+		"uvPivot" " -type \"double2\" 3.73453915119171143 0.83624047040939331"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_51|EntityX9Rig:BackSpike_51Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_51|EntityX9Rig:BackSpike_51Shape" 
+		"uvPivot" " -type \"double2\" 3.57739102840423584 0.70237690210342407"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_52|EntityX9Rig:BackSpike_52Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_52|EntityX9Rig:BackSpike_52Shape" 
+		"uvPivot" " -type \"double2\" 3.58694446086883545 0.57697635889053345"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_53|EntityX9Rig:BackSpike_53Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_53|EntityX9Rig:BackSpike_53Shape" 
+		"uvPivot" " -type \"double2\" 3.92469656467437744 0.25570015609264374"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_54|EntityX9Rig:BackSpike_54Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_54|EntityX9Rig:BackSpike_54Shape" 
+		"uvPivot" " -type \"double2\" 3.53985261917114258 0.13830901682376862"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_55|EntityX9Rig:BackSpike_55Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_55|EntityX9Rig:BackSpike_55Shape" 
+		"uvPivot" " -type \"double2\" 3.49752986431121826 0.6194223165512085"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_56|EntityX9Rig:BackSpike_56Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_56|EntityX9Rig:BackSpike_56Shape" 
+		"uvPivot" " -type \"double2\" 3.61181414127349854 0.13830903172492981"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_57|EntityX9Rig:BackSpike_57Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_57|EntityX9Rig:BackSpike_57Shape" 
+		"uvPivot" " -type \"double2\" 3.37069082260131836 0.61263728141784668"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_58|EntityX9Rig:BackSpike_58Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_58|EntityX9Rig:BackSpike_58Shape" 
+		"uvPivot" " -type \"double2\" 3.68377554416656494 0.13830901682376862"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_59|EntityX9Rig:BackSpike_59Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_59|EntityX9Rig:BackSpike_59Shape" 
+		"uvPivot" " -type \"double2\" 3.69175040721893311 0.38819283246994019"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_60|EntityX9Rig:BackSpike_60Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_60|EntityX9Rig:BackSpike_60Shape" 
+		"uvPivot" " -type \"double2\" 3.7557370662689209 0.13830901682376862"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_61|EntityX9Rig:BackSpike_61Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_61|EntityX9Rig:BackSpike_61Shape" 
+		"uvPivot" " -type \"double2\" 3.75867295265197754 0.38819286227226257"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_62|EntityX9Rig:BackSpike_62Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_62|EntityX9Rig:BackSpike_62Shape" 
+		"uvPivot" " -type \"double2\" 3.44925022125244141 0.38302862644195557"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_63|EntityX9Rig:BackSpike_63Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_63|EntityX9Rig:BackSpike_63Shape" 
+		"uvPivot" " -type \"double2\" 3.20190739631652832 0.68738964200019836"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_64|EntityX9Rig:BackSpike_64Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_64|EntityX9Rig:BackSpike_64Shape" 
+		"uvPivot" " -type \"double2\" 3.08898735046386719 0.69519722461700439"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_65|EntityX9Rig:BackSpike_65Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_65|EntityX9Rig:BackSpike_65Shape" 
+		"uvPivot" " -type \"double2\" 3.18826806545257568 0.86188751459121704"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_66|EntityX9Rig:BackSpike_66Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_66|EntityX9Rig:BackSpike_66Shape" 
+		"uvPivot" " -type \"double2\" 3.9266897439956665 0.56769090890884399"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_67|EntityX9Rig:BackSpike_67Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_67|EntityX9Rig:BackSpike_67Shape" 
+		"uvPivot" " -type \"double2\" 3.81474173069000244 0.57518309354782104"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_68|EntityX9Rig:BackSpike_68Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_68|EntityX9Rig:BackSpike_68Shape" 
+		"uvPivot" " -type \"double2\" 3.85195982456207275 0.57518297433853149"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_69|EntityX9Rig:BackSpike_69Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_69|EntityX9Rig:BackSpike_69Shape" 
+		"uvPivot" " -type \"double2\" 3.07821917533874512 0.85734283924102783"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_70|EntityX9Rig:BackSpike_70Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:BackSpikes|EntityX9Rig:BackSpike_70|EntityX9Rig:BackSpike_70Shape" 
+		"uvPivot" " -type \"double2\" 3.10943567752838135 0.85734295845031738"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_01|EntityX9Rig:HeadSpike_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_01|EntityX9Rig:HeadSpike_01Shape" 
+		"uvPivot" " -type \"double2\" 3.83423089981079102 0.45541949570178986"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_03|EntityX9Rig:HeadSpike_03Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_03|EntityX9Rig:HeadSpike_03Shape" 
+		"uvPivot" " -type \"double2\" 3.25260341167449951 0.79444897174835205"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_05|EntityX9Rig:HeadSpike_05Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_05|EntityX9Rig:HeadSpike_05Shape" 
+		"uvPivot" " -type \"double2\" 3.29027962684631348 0.79444903135299683"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_06|EntityX9Rig:HeadSpike_06Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_06|EntityX9Rig:HeadSpike_06Shape" 
+		"uvPivot" " -type \"double2\" 3.62514829635620117 0.57697629928588867"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_07|EntityX9Rig:HeadSpike_07Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_07|EntityX9Rig:HeadSpike_07Shape" 
+		"uvPivot" " -type \"double2\" 3.02310872077941895 0.50654111802577972"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_09|EntityX9Rig:HeadSpike_09Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_09|EntityX9Rig:HeadSpike_09Shape" 
+		"uvPivot" " -type \"double2\" 3.06896543502807617 0.50654111802577972"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_13|EntityX9Rig:HeadSpike_13Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_13|EntityX9Rig:HeadSpike_13Shape" 
+		"uvPivot" " -type \"double2\" 3.1148221492767334 0.50654111802577972"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_15|EntityX9Rig:HeadSpike_15Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_15|EntityX9Rig:HeadSpike_15Shape" 
+		"uvPivot" " -type \"double2\" 3.02200400829315186 0.34605298936367035"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_16|EntityX9Rig:HeadSpike_16Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_16|EntityX9Rig:HeadSpike_16Shape" 
+		"uvPivot" " -type \"double2\" 3.06565117835998535 0.34605300426483154"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_17|EntityX9Rig:HeadSpike_17Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_17|EntityX9Rig:HeadSpike_17Shape" 
+		"uvPivot" " -type \"double2\" 3.10929858684539795 0.34605297446250916"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_18|EntityX9Rig:HeadSpike_18Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_18|EntityX9Rig:HeadSpike_18Shape" 
+		"uvPivot" " -type \"double2\" 3.60931026935577393 0.70237702131271362"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_19|EntityX9Rig:HeadSpike_19Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_19|EntityX9Rig:HeadSpike_19Shape" 
+		"uvPivot" " -type \"double2\" 3.152945876121521 0.34605298936367035"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_20|EntityX9Rig:HeadSpike_20Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_20|EntityX9Rig:HeadSpike_20Shape" 
+		"uvPivot" " -type \"double2\" 3.86080598831176758 0.45541945099830627"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_21|EntityX9Rig:HeadSpike_21Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_21|EntityX9Rig:HeadSpike_21Shape" 
+		"uvPivot" " -type \"double2\" 3.32795584201812744 0.79444903135299683"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_22|EntityX9Rig:HeadSpike_22Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_22|EntityX9Rig:HeadSpike_22Shape" 
+		"uvPivot" " -type \"double2\" 3.36563217639923096 0.79444897174835205"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_23|EntityX9Rig:HeadSpike_23Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_23|EntityX9Rig:HeadSpike_23Shape" 
+		"uvPivot" " -type \"double2\" 3.66335189342498779 0.57697641849517822"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_24|EntityX9Rig:HeadSpike_24Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_24|EntityX9Rig:HeadSpike_24Shape" 
+		"uvPivot" " -type \"double2\" 3.16067874431610107 0.50654111802577972"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_25|EntityX9Rig:HeadSpike_25Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_25|EntityX9Rig:HeadSpike_25Shape" 
+		"uvPivot" " -type \"double2\" 3.20653557777404785 0.50654111802577972"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_26|EntityX9Rig:HeadSpike_26Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_26|EntityX9Rig:HeadSpike_26Shape" 
+		"uvPivot" " -type \"double2\" 3.25239217281341553 0.50654111802577972"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_27|EntityX9Rig:HeadSpike_27Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_27|EntityX9Rig:HeadSpike_27Shape" 
+		"uvPivot" " -type \"double2\" 3.19659316539764404 0.34605297446250916"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_28|EntityX9Rig:HeadSpike_28Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_28|EntityX9Rig:HeadSpike_28Shape" 
+		"uvPivot" " -type \"double2\" 3.24024045467376709 0.34605298936367035"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_29|EntityX9Rig:HeadSpike_29Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_29|EntityX9Rig:HeadSpike_29Shape" 
+		"uvPivot" " -type \"double2\" 3.28388762474060059 0.34605298936367035"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_30|EntityX9Rig:HeadSpike_30Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_30|EntityX9Rig:HeadSpike_30Shape" 
+		"uvPivot" " -type \"double2\" 3.64122974872589111 0.70237696170806885"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_31|EntityX9Rig:HeadSpike_31Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_31|EntityX9Rig:HeadSpike_31Shape" 
+		"uvPivot" " -type \"double2\" 3.32753503322601318 0.34605300426483154"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_32|EntityX9Rig:HeadSpike_32Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_32|EntityX9Rig:HeadSpike_32Shape" 
+		"uvPivot" " -type \"double2\" 3.33936834335327148 0.91077530384063721"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_33|EntityX9Rig:HeadSpike_33Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_33|EntityX9Rig:HeadSpike_33Shape" 
+		"uvPivot" " -type \"double2\" 3.22699594497680664 0.91229707002639771"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_34|EntityX9Rig:HeadSpike_34Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_34|EntityX9Rig:HeadSpike_34Shape" 
+		"uvPivot" " -type \"double2\" 3.39943420886993408 0.81342023611068726"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_35|EntityX9Rig:HeadSpike_35Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_35|EntityX9Rig:HeadSpike_35Shape" 
+		"uvPivot" " -type \"double2\" 3.8401024341583252 0.90972191095352173"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_36|EntityX9Rig:HeadSpike_36Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_36|EntityX9Rig:HeadSpike_36Shape" 
+		"uvPivot" " -type \"double2\" 3.86928224563598633 0.90972185134887695"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_37|EntityX9Rig:HeadSpike_37Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_37|EntityX9Rig:HeadSpike_37Shape" 
+		"uvPivot" " -type \"double2\" 3.89846229553222656 0.9097219705581665"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_38|EntityX9Rig:HeadSpike_38Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_38|EntityX9Rig:HeadSpike_38Shape" 
+		"uvPivot" " -type \"double2\" 3.9276425838470459 0.90972191095352173"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_39|EntityX9Rig:HeadSpike_39Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_39|EntityX9Rig:HeadSpike_39Shape" 
+		"uvPivot" " -type \"double2\" 3.55634570121765137 0.93284398317337036"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_40|EntityX9Rig:HeadSpike_40Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_40|EntityX9Rig:HeadSpike_40Shape" 
+		"uvPivot" " -type \"double2\" 3.58900701999664307 0.93284392356872559"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_41|EntityX9Rig:HeadSpike_41Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_41|EntityX9Rig:HeadSpike_41Shape" 
+		"uvPivot" " -type \"double2\" 3.42971837520599365 0.81342017650604248"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_42|EntityX9Rig:HeadSpike_42Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_42|EntityX9Rig:HeadSpike_42Shape" 
+		"uvPivot" " -type \"double2\" 3.46000266075134277 0.81342017650604248"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_43|EntityX9Rig:HeadSpike_43Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_43|EntityX9Rig:HeadSpike_43Shape" 
+		"uvPivot" " -type \"double2\" 3.36370694637298584 0.91077536344528198"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_44|EntityX9Rig:HeadSpike_44Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_44|EntityX9Rig:HeadSpike_44Shape" 
+		"uvPivot" " -type \"double2\" 3.38804543018341064 0.91077530384063721"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_45|EntityX9Rig:HeadSpike_45Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_45|EntityX9Rig:HeadSpike_45Shape" 
+		"uvPivot" " -type \"double2\" 3.71335196495056152 0.9269859790802002"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_46|EntityX9Rig:HeadSpike_46Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_46|EntityX9Rig:HeadSpike_46Shape" 
+		"uvPivot" " -type \"double2\" 3.493011474609375 0.42418800294399261"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_47|EntityX9Rig:HeadSpike_47Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_47|EntityX9Rig:HeadSpike_47Shape" 
+		"uvPivot" " -type \"double2\" 3.51319038867950439 0.42418800294399261"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_48|EntityX9Rig:HeadSpike_48Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_48|EntityX9Rig:HeadSpike_48Shape" 
+		"uvPivot" " -type \"double2\" 3.412384033203125 0.91077536344528198"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_49|EntityX9Rig:HeadSpike_49Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_49|EntityX9Rig:HeadSpike_49Shape" 
+		"uvPivot" " -type \"double2\" 3.4367225170135498 0.91077530384063721"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_50|EntityX9Rig:HeadSpike_50Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_50|EntityX9Rig:HeadSpike_50Shape" 
+		"uvPivot" " -type \"double2\" 3.74238693714141846 0.71593505144119263"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_51|EntityX9Rig:HeadSpike_51Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_51|EntityX9Rig:HeadSpike_51Shape" 
+		"uvPivot" " -type \"double2\" 3.78378152847290039 0.71593505144119263"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_52|EntityX9Rig:HeadSpike_52Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_52|EntityX9Rig:HeadSpike_52Shape" 
+		"uvPivot" " -type \"double2\" 3.010498046875 0.94964349269866943"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_53|EntityX9Rig:HeadSpike_53Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:HeadSpikes|EntityX9Rig:HeadSpike_53|EntityX9Rig:HeadSpike_53Shape" 
+		"uvPivot" " -type \"double2\" 3.03113400936126709 0.94964355230331421"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_01|EntityX9Rig:TailSpike_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_01|EntityX9Rig:TailSpike_01Shape" 
+		"uvPivot" " -type \"double2\" 3.76046299934387207 0.83624047040939331"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_02|EntityX9Rig:TailSpike_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_02|EntityX9Rig:TailSpike_02Shape" 
+		"uvPivot" " -type \"double2\" 3.78638660907745361 0.83624053001403809"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_03|EntityX9Rig:TailSpike_03Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_03|EntityX9Rig:TailSpike_03Shape" 
+		"uvPivot" " -type \"double2\" 3.81231033802032471 0.83624047040939331"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_04|EntityX9Rig:TailSpike_04Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_04|EntityX9Rig:TailSpike_04Shape" 
+		"uvPivot" " -type \"double2\" 3.4659656286239624 0.91826260089874268"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_05|EntityX9Rig:TailSpike_05Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_05|EntityX9Rig:TailSpike_05Shape" 
+		"uvPivot" " -type \"double2\" 3.58834147453308105 0.81694740056991577"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_06|EntityX9Rig:TailSpike_06Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_06|EntityX9Rig:TailSpike_06Shape" 
+		"uvPivot" " -type \"double2\" 3.70155572891235352 0.57697635889053345"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_07|EntityX9Rig:TailSpike_07Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_07|EntityX9Rig:TailSpike_07Shape" 
+		"uvPivot" " -type \"double2\" 3.96722877025604248 0.8868945837020874"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_08|EntityX9Rig:TailSpike_08Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_08|EntityX9Rig:TailSpike_08Shape" 
+		"uvPivot" " -type \"double2\" 3.82517611980438232 0.71593505144119263"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_09|EntityX9Rig:TailSpike_09Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_09|EntityX9Rig:TailSpike_09Shape" 
+		"uvPivot" " -type \"double2\" 3.96766829490661621 0.21148335933685303"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_10|EntityX9Rig:TailSpike_10Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_10|EntityX9Rig:TailSpike_10Shape" 
+		"uvPivot" " -type \"double2\" 3.25527215003967285 0.91229707002639771"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_11|EntityX9Rig:TailSpike_11Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_11|EntityX9Rig:TailSpike_11Shape" 
+		"uvPivot" " -type \"double2\" 3.98181819915771484 0.047739863395690918"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_12|EntityX9Rig:TailSpike_12Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_12|EntityX9Rig:TailSpike_12Shape" 
+		"uvPivot" " -type \"double2\" 3.95748782157897949 0.30034998059272766"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_13|EntityX9Rig:TailSpike_13Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_13|EntityX9Rig:TailSpike_13Shape" 
+		"uvPivot" " -type \"double2\" 3.6189119815826416 0.92324692010879517"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_14|EntityX9Rig:TailSpike_14Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_14|EntityX9Rig:TailSpike_14Shape" 
+		"uvPivot" " -type \"double2\" 3.88738095760345459 0.45541949570178986"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_15|EntityX9Rig:TailSpike_15Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_15|EntityX9Rig:TailSpike_15Shape" 
+		"uvPivot" " -type \"double2\" 3.49028694629669189 0.81342023611068726"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_16|EntityX9Rig:TailSpike_16Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_16|EntityX9Rig:TailSpike_16Shape" 
+		"uvPivot" " -type \"double2\" 3.73840737342834473 0.9269859790802002"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_17|EntityX9Rig:TailSpike_17Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_17|EntityX9Rig:TailSpike_17Shape" 
+		"uvPivot" " -type \"double2\" 3.64191806316375732 0.92324697971343994"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_18|EntityX9Rig:TailSpike_18Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_18|EntityX9Rig:TailSpike_18Shape" 
+		"uvPivot" " -type \"double2\" 3.05176985263824463 0.94964343309402466"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_19|EntityX9Rig:TailSpike_19Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_19|EntityX9Rig:TailSpike_19Shape" 
+		"uvPivot" " -type \"double2\" 3.28451430797576904 0.45690292119979858"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_20|EntityX9Rig:TailSpike_20Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_20|EntityX9Rig:TailSpike_20Shape" 
+		"uvPivot" " -type \"double2\" 3.9777902364730835 0.11102567613124847"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_21|EntityX9Rig:TailSpike_21Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_21|EntityX9Rig:TailSpike_21Shape" 
+		"uvPivot" " -type \"double2\" 3.66492390632629395 0.92324697971343994"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_22|EntityX9Rig:TailSpike_22Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_22|EntityX9Rig:TailSpike_22Shape" 
+		"uvPivot" " -type \"double2\" 3.91395604610443115 0.45541943609714508"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_23|EntityX9Rig:TailSpike_23Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_23|EntityX9Rig:TailSpike_23Shape" 
+		"uvPivot" " -type \"double2\" 3.52057135105133057 0.81342029571533203"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_24|EntityX9Rig:TailSpike_24Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_24|EntityX9Rig:TailSpike_24Shape" 
+		"uvPivot" " -type \"double2\" 3.76346290111541748 0.9269859790802002"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_25|EntityX9Rig:TailSpike_25Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_25|EntityX9Rig:TailSpike_25Shape" 
+		"uvPivot" " -type \"double2\" 3.68792974948883057 0.92324697971343994"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_26|EntityX9Rig:TailSpike_26Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_26|EntityX9Rig:TailSpike_26Shape" 
+		"uvPivot" " -type \"double2\" 3.07240581512451172 0.94964349269866943"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_27|EntityX9Rig:TailSpike_27Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_27|EntityX9Rig:TailSpike_27Shape" 
+		"uvPivot" " -type \"double2\" 3.30296063423156738 0.45690290629863739"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_28|EntityX9Rig:TailSpike_28Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:TailSpikes|EntityX9Rig:TailSpike_28|EntityX9Rig:TailSpike_28Shape" 
+		"uvPivot" " -type \"double2\" 3.99167108535766602 0.11102569103240967"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_01|EntityX9Rig:L_ArmSpike_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_01|EntityX9Rig:L_ArmSpike_01Shape" 
+		"uvPivot" " -type \"double2\" 3.81830942630767822 0.094722464680671692"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_02|EntityX9Rig:L_ArmSpike_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_02|EntityX9Rig:L_ArmSpike_02Shape" 
+		"uvPivot" " -type \"double2\" 3.28354847431182861 0.91229707002639771"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_03|EntityX9Rig:L_ArmSpike_03Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_03|EntityX9Rig:L_ArmSpike_03Shape" 
+		"uvPivot" " -type \"double2\" 3.67314910888671875 0.70237696170806885"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_04|EntityX9Rig:L_ArmSpike_04Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_04|EntityX9Rig:L_ArmSpike_04Shape" 
+		"uvPivot" " -type \"double2\" 3.49445843696594238 0.91826260089874268"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_05|EntityX9Rig:L_ArmSpike_05Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_05|EntityX9Rig:L_ArmSpike_05Shape" 
+		"uvPivot" " -type \"double2\" 3.87242233753204346 0.36830474436283112"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_06|EntityX9Rig:L_ArmSpike_06Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_06|EntityX9Rig:L_ArmSpike_06Shape" 
+		"uvPivot" " -type \"double2\" 3.91250908374786377 0.078711584210395813"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_07|EntityX9Rig:L_ArmSpike_07Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_07|EntityX9Rig:L_ArmSpike_07Shape" 
+		"uvPivot" " -type \"double2\" 3.62056529521942139 0.816947340965271"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_08|EntityX9Rig:L_ArmSpike_08Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:L_ArmSpike_08|EntityX9Rig:L_ArmSpike_08Shape" 
+		"uvPivot" " -type \"double2\" 3.95862650871276855 0.54621578752994537"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_01|EntityX9Rig:R_ArmSpike_01Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_01|EntityX9Rig:R_ArmSpike_01Shape" 
+		"uvPivot" " -type \"double2\" 3.86619150638580322 0.094722449779510498"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_02|EntityX9Rig:R_ArmSpike_02Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_02|EntityX9Rig:R_ArmSpike_02Shape" 
+		"uvPivot" " -type \"double2\" 3.31182479858398438 0.91229701042175293"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_03|EntityX9Rig:R_ArmSpike_03Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_03|EntityX9Rig:R_ArmSpike_03Shape" 
+		"uvPivot" " -type \"double2\" 3.70506846904754639 0.70237696170806885"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_04|EntityX9Rig:R_ArmSpike_04Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_04|EntityX9Rig:R_ArmSpike_04Shape" 
+		"uvPivot" " -type \"double2\" 3.52295124530792236 0.9182625412940979"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_05|EntityX9Rig:R_ArmSpike_05Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_05|EntityX9Rig:R_ArmSpike_05Shape" 
+		"uvPivot" " -type \"double2\" 3.89358437061309814 0.36830475926399231"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_06|EntityX9Rig:R_ArmSpike_06Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_06|EntityX9Rig:R_ArmSpike_06Shape" 
+		"uvPivot" " -type \"double2\" 3.95154273509979248 0.078711599111557007"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_07|EntityX9Rig:R_ArmSpike_07Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_07|EntityX9Rig:R_ArmSpike_07Shape" 
+		"uvPivot" " -type \"double2\" 3.65278923511505127 0.816947340965271"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_08|EntityX9Rig:R_ArmSpike_08Shape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Spikes|EntityX9Rig:ArmSpikes|EntityX9Rig:R_ArmSpike_08|EntityX9Rig:R_ArmSpike_08Shape" 
+		"uvPivot" " -type \"double2\" 3.98608863353729248 0.54621577262878418"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Eyes|EntityX9Rig:L_Eye|EntityX9Rig:L_EyeShape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Eyes|EntityX9Rig:L_Eye|EntityX9Rig:L_EyeShape" 
+		"uvPivot" " -type \"double2\" 4.49465274810791016 0.49254418909549713"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Eyes|EntityX9Rig:R_Eye|EntityX9Rig:R_EyeShape" 
+		"visibility" " -k 0 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Eyes|EntityX9Rig:R_Eye|EntityX9Rig:R_EyeShape" 
+		"uvPivot" " -type \"double2\" 4.49465274810791016 0.49254424870014191"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
+		"translate" " -type \"double3\" 0.64688428582900681 1.1463041793557949e-08 4.8169838784417607e-08"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
+		"translateX" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
+		"translateY" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
+		"translateZ" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -30.19080699136396362 15.9530632072942069 56.38063923283327483"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt|EntityX9Rig:L_Arm_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0 0 45.81411588657415024"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
+		"translate" " -type \"double3\" -0.64688399354553217 4.6539250231347751e-10 -2.0446777604377075e-07"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
+		"translateX" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
+		"translateY" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
+		"translateZ" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -31.05328297484870959 29.93337241759984124 61.81602344972587559"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt|EntityX9Rig:R_Arm_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.00022910385315623054 0.00032932671971444436 36.33372738549827119"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
+		"translate" " -type \"double3\" 0.29097148776054604 -0.44485402107238814 0.024581506848335266"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
+		"translateX" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
+		"translateY" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
+		"translateZ" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -15.94318826468997408 -15.73071966468846838 27.43194580766642687"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0 0 29.82681046109302514"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt|EntityX9Rig:L_Leg_03_IK_Jnt" 
+		"rotate" " -type \"double3\" -1.61747860834808299 0.90326485651465227 -32.06619675154350801"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt|EntityX9Rig:L_Leg_03_IK_Jnt|EntityX9Rig:L_Leg_04_IK_Jnt|EntityX9Rig:L_Foot_IK_Jnt" 
+		"rotate" " -type \"double3\" -11.92081318619304398 13.44539775050492025 -0.15194558867484811"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt|EntityX9Rig:L_Leg_03_IK_Jnt|EntityX9Rig:L_Leg_04_IK_Jnt|EntityX9Rig:L_Foot_IK_Jnt|EntityX9Rig:L_Toe_01_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.82840260564887225 0 0"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt|EntityX9Rig:L_Leg_03_IK_Jnt|EntityX9Rig:L_Leg_04_IK_Jnt|EntityX9Rig:L_Foot_IK_Jnt|EntityX9Rig:L_Toe_01_Knuckle_01_IK_Jnt|EntityX9Rig:L_Toe_01_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.24289398578743956 0.18451302924931534 0.0056443269317513374"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt|EntityX9Rig:L_Leg_03_IK_Jnt|EntityX9Rig:L_Leg_04_IK_Jnt|EntityX9Rig:L_Foot_IK_Jnt|EntityX9Rig:L_Toe_02_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.7563927776570426 -0.55556162832269729 1.34072536039001933"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt|EntityX9Rig:L_Leg_03_IK_Jnt|EntityX9Rig:L_Leg_04_IK_Jnt|EntityX9Rig:L_Foot_IK_Jnt|EntityX9Rig:L_Toe_02_Knuckle_01_IK_Jnt|EntityX9Rig:L_Toe_02_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.24420616114183893 1.4874359608675185 -21.13596106117029194"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt|EntityX9Rig:L_Leg_03_IK_Jnt|EntityX9Rig:L_Leg_04_IK_Jnt|EntityX9Rig:L_Foot_IK_Jnt|EntityX9Rig:L_Toe_03_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.48140418272246083 -3.16307634040265606 11.12307283828899607"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt|EntityX9Rig:L_Leg_03_IK_Jnt|EntityX9Rig:L_Leg_04_IK_Jnt|EntityX9Rig:L_Foot_IK_Jnt|EntityX9Rig:L_Toe_03_Knuckle_01_IK_Jnt|EntityX9Rig:L_Toe_03_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" -10.90366129998556133 1.30245009464885597 -28.87337300746036206"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
+		"translate" " -type \"double3\" -0.2909710109233834 -0.44484996795654341 0.024581484496593475"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
+		"translateX" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
+		"translateY" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
+		"translateZ" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
+		"rotate" " -type \"double3\" 4.74921513469771561 -8.18985827337630568 -33.13075413999732177"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt|EntityX9Rig:R_Leg_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 3.5319201840250662e-06 -1.5929022946370875e-06 14.11159660944746363"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt|EntityX9Rig:R_Leg_02_IK_Jnt|EntityX9Rig:R_Leg_03_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.701242888252123 0.54059153164661833 -15.16733400088307704"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt|EntityX9Rig:R_Leg_02_IK_Jnt|EntityX9Rig:R_Leg_03_IK_Jnt|EntityX9Rig:R_Leg_04_IK_Jnt|EntityX9Rig:R_Foot_IK_Jnt" 
+		"rotate" " -type \"double3\" -5.90782648472287075 -1.63180779716391644 34.41856566955188867"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt|EntityX9Rig:R_Leg_02_IK_Jnt|EntityX9Rig:R_Leg_03_IK_Jnt|EntityX9Rig:R_Leg_04_IK_Jnt|EntityX9Rig:R_Foot_IK_Jnt|EntityX9Rig:R_Toe_01_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.71291061864606464 0 0"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt|EntityX9Rig:R_Leg_02_IK_Jnt|EntityX9Rig:R_Leg_03_IK_Jnt|EntityX9Rig:R_Leg_04_IK_Jnt|EntityX9Rig:R_Foot_IK_Jnt|EntityX9Rig:R_Toe_01_Knuckle_01_IK_Jnt|EntityX9Rig:R_Toe_01_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.24596089892459239 0.15885093908888825 0.0038337044119720449"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt|EntityX9Rig:R_Leg_02_IK_Jnt|EntityX9Rig:R_Leg_03_IK_Jnt|EntityX9Rig:R_Leg_04_IK_Jnt|EntityX9Rig:R_Foot_IK_Jnt|EntityX9Rig:R_Toe_02_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.097160488497796738 2.5142631391057179e-07 -2.1318059481666803e-10"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt|EntityX9Rig:R_Leg_02_IK_Jnt|EntityX9Rig:R_Leg_03_IK_Jnt|EntityX9Rig:R_Leg_04_IK_Jnt|EntityX9Rig:R_Foot_IK_Jnt|EntityX9Rig:R_Toe_02_Knuckle_01_IK_Jnt|EntityX9Rig:R_Toe_02_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.11427423186076338 3.1946924871749544e-10 3.2035629052566508e-07"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt|EntityX9Rig:R_Leg_02_IK_Jnt|EntityX9Rig:R_Leg_03_IK_Jnt|EntityX9Rig:R_Leg_04_IK_Jnt|EntityX9Rig:R_Foot_IK_Jnt|EntityX9Rig:R_Toe_03_Knuckle_01_IK_Jnt" 
+		"rotate" " -type \"double3\" 1.71880086080894401 -1.5844891092968321e-06 -3.1832725363062109e-06"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt|EntityX9Rig:R_Leg_02_IK_Jnt|EntityX9Rig:R_Leg_03_IK_Jnt|EntityX9Rig:R_Leg_04_IK_Jnt|EntityX9Rig:R_Foot_IK_Jnt|EntityX9Rig:R_Toe_03_Knuckle_01_IK_Jnt|EntityX9Rig:R_Toe_03_Knuckle_02_IK_Jnt" 
+		"rotate" " -type \"double3\" -2.93960854066932642 -0.45949163082790417 0.10183030541265745"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -89.82823289529383715 70.02715097642236231 21.52738755348141453"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.33877911941676919 -2.11611111254323125 11.90424518469713711"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt" 
+		"rotate" " -type \"double3\" -2.78810948993367802 -6.31257558028457844 23.50232941203942971"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt" 
+		"rotate" " -type \"double3\" -4.95398681448712352 -7.11482386663086075 11.15894267379677984"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt" 
+		"rotate" " -type \"double3\" -4.86106589971989944 -5.64617601621081189 7.23548151213084445"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt" 
+		"rotate" " -type \"double3\" -4.05294986881881947 -4.25070314631312396 1.64311884615141968"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt" 
+		"rotate" " -type \"double3\" -4.22267576041618664 -4.33085025960385561 0.65940896137243155"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt" 
+		"rotate" " -type \"double3\" -2.90346852126288324 -3.01680875646027635 -3.04513852222921999"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.63933147114364619 0.10009825315132381 -9.59395152564219167"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.6334580608724425 1.96267458645127246 -0.27004913336788294"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.63985578076315452 0.1690516867593265 -10.37066643358753915"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.09999708773552729 -2.15417849362147917 -29.6633619758437348"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.31815665351629402 1.56573597456154401 -22.97083923018889351"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.49744541521866009 -3.78039863070071913 14.98716203737752828"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt|EntityX9Rig:L_Tail_03_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.98984542923303842 11.06137110183562378 -10.19581284529761689"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt|EntityX9Rig:L_Tail_03_IK_Jnt|EntityX9Rig:L_Tail_04_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.068634378096312496 0.66434478093345795 -11.79663150192625309"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt|EntityX9Rig:L_Tail_03_IK_Jnt|EntityX9Rig:L_Tail_04_IK_Jnt|EntityX9Rig:L_Tail_05_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.044463022815025274 0.47378223993072355 -10.72260374796695537"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt|EntityX9Rig:L_Tail_03_IK_Jnt|EntityX9Rig:L_Tail_04_IK_Jnt|EntityX9Rig:L_Tail_05_IK_Jnt|EntityX9Rig:L_Tail_06_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.032022276273020372 -1.41600709349877274 -2.59085610910807684"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt|EntityX9Rig:L_Tail_03_IK_Jnt|EntityX9Rig:L_Tail_04_IK_Jnt|EntityX9Rig:L_Tail_05_IK_Jnt|EntityX9Rig:L_Tail_06_IK_Jnt|EntityX9Rig:L_Tail_07_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.039778837076185243 -1.10353867184262255 4.12872313857815243"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt|EntityX9Rig:L_Tail_03_IK_Jnt|EntityX9Rig:L_Tail_04_IK_Jnt|EntityX9Rig:L_Tail_05_IK_Jnt|EntityX9Rig:L_Tail_06_IK_Jnt|EntityX9Rig:L_Tail_07_IK_Jnt|EntityX9Rig:L_Tail_08_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.14016705432431015 -1.68269048515457254 9.52274146042082315"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt|EntityX9Rig:L_Tail_03_IK_Jnt|EntityX9Rig:L_Tail_04_IK_Jnt|EntityX9Rig:L_Tail_05_IK_Jnt|EntityX9Rig:L_Tail_06_IK_Jnt|EntityX9Rig:L_Tail_07_IK_Jnt|EntityX9Rig:L_Tail_08_IK_Jnt|EntityX9Rig:L_Tail_09_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.00075645329133018928 0.39161252634152688 -0.22134817170802321"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt|EntityX9Rig:L_Tail_03_IK_Jnt|EntityX9Rig:L_Tail_04_IK_Jnt|EntityX9Rig:L_Tail_05_IK_Jnt|EntityX9Rig:L_Tail_06_IK_Jnt|EntityX9Rig:L_Tail_07_IK_Jnt|EntityX9Rig:L_Tail_08_IK_Jnt|EntityX9Rig:L_Tail_09_IK_Jnt|EntityX9Rig:L_Tail_10_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.020432179062054204 -0.70796688392505069 3.30619388680623505"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:L_Tail_01_IK_Jnt|EntityX9Rig:L_Tail_02_IK_Jnt|EntityX9Rig:L_Tail_03_IK_Jnt|EntityX9Rig:L_Tail_04_IK_Jnt|EntityX9Rig:L_Tail_05_IK_Jnt|EntityX9Rig:L_Tail_06_IK_Jnt|EntityX9Rig:L_Tail_07_IK_Jnt|EntityX9Rig:L_Tail_08_IK_Jnt|EntityX9Rig:L_Tail_09_IK_Jnt|EntityX9Rig:L_Tail_10_IK_Jnt|EntityX9Rig:L_Tail_11_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.055113699314846359 -0.78029580819163002 8.08026503737060509"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.302125579839364 -1.49600072176434029 -22.83974994634893108"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt" 
+		"rotate" " -type \"double3\" -1.29995679916156015 -12.19923431842017258 12.11989703958527187"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt|EntityX9Rig:R_Tail_03_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.62572162813426491 10.70341947769999535 -6.67301433821675527"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt|EntityX9Rig:R_Tail_03_IK_Jnt|EntityX9Rig:R_Tail_04_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.095903543015302295 -0.89271236063405668 -12.26506934791581038"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt|EntityX9Rig:R_Tail_03_IK_Jnt|EntityX9Rig:R_Tail_04_IK_Jnt|EntityX9Rig:R_Tail_05_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.052620514803397023 0.57464194281624714 -10.46398984125459464"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt|EntityX9Rig:R_Tail_03_IK_Jnt|EntityX9Rig:R_Tail_04_IK_Jnt|EntityX9Rig:R_Tail_05_IK_Jnt|EntityX9Rig:R_Tail_06_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.014984110402823238 -0.75279492388294644 -2.28168145586438254"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt|EntityX9Rig:R_Tail_03_IK_Jnt|EntityX9Rig:R_Tail_04_IK_Jnt|EntityX9Rig:R_Tail_05_IK_Jnt|EntityX9Rig:R_Tail_06_IK_Jnt|EntityX9Rig:R_Tail_07_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.0093918777912666267 0.24325560430889007 4.42028459379338923"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt|EntityX9Rig:R_Tail_03_IK_Jnt|EntityX9Rig:R_Tail_04_IK_Jnt|EntityX9Rig:R_Tail_05_IK_Jnt|EntityX9Rig:R_Tail_06_IK_Jnt|EntityX9Rig:R_Tail_07_IK_Jnt|EntityX9Rig:R_Tail_08_IK_Jnt" 
+		"rotate" " -type \"double3\" 0.022860689582196937 0.26843493996326762 9.73522646898202737"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt|EntityX9Rig:R_Tail_03_IK_Jnt|EntityX9Rig:R_Tail_04_IK_Jnt|EntityX9Rig:R_Tail_05_IK_Jnt|EntityX9Rig:R_Tail_06_IK_Jnt|EntityX9Rig:R_Tail_07_IK_Jnt|EntityX9Rig:R_Tail_08_IK_Jnt|EntityX9Rig:R_Tail_09_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.00097617801792585055 0.97279066689003524 -0.11494257202790303"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt|EntityX9Rig:R_Tail_03_IK_Jnt|EntityX9Rig:R_Tail_04_IK_Jnt|EntityX9Rig:R_Tail_05_IK_Jnt|EntityX9Rig:R_Tail_06_IK_Jnt|EntityX9Rig:R_Tail_07_IK_Jnt|EntityX9Rig:R_Tail_08_IK_Jnt|EntityX9Rig:R_Tail_09_IK_Jnt|EntityX9Rig:R_Tail_10_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.027975332585824759 -1.0251800105435831 3.12618821927291712"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:Tail_01_IK_Jnt|EntityX9Rig:Tail_02_IK_Jnt|EntityX9Rig:Tail_03_IK_Jnt|EntityX9Rig:Tail_04_IK_Jnt|EntityX9Rig:Tail_05_IK_Jnt|EntityX9Rig:Tail_06_IK_Jnt|EntityX9Rig:Tail_07_IK_Jnt|EntityX9Rig:Tail_08_IK_Jnt|EntityX9Rig:Tail_09_IK_Jnt|EntityX9Rig:Tail_10_IK_Jnt|EntityX9Rig:Tail_11_IK_Jnt|EntityX9Rig:Tail_12_IK_Jnt|EntityX9Rig:Tail_13_IK_Jnt|EntityX9Rig:R_Tail_01_IK_Jnt|EntityX9Rig:R_Tail_02_IK_Jnt|EntityX9Rig:R_Tail_03_IK_Jnt|EntityX9Rig:R_Tail_04_IK_Jnt|EntityX9Rig:R_Tail_05_IK_Jnt|EntityX9Rig:R_Tail_06_IK_Jnt|EntityX9Rig:R_Tail_07_IK_Jnt|EntityX9Rig:R_Tail_08_IK_Jnt|EntityX9Rig:R_Tail_09_IK_Jnt|EntityX9Rig:R_Tail_10_IK_Jnt|EntityX9Rig:R_Tail_11_IK_Jnt" 
+		"rotate" " -type \"double3\" -0.055307210884758415 -0.79537860875346611 7.95381718258403758"
+		
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Pelvis_FK_Ctrl_Grp|EntityX9Rig:Pelvis_FK_Ctrl" 
 		"Follow_Translate" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Pelvis_FK_Ctrl_Grp|EntityX9Rig:Pelvis_FK_Ctrl" 
@@ -1009,6 +1960,13 @@ createNode reference -n "EntityX9RigRN";
 		"SpecimenX9W2" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Base_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Base_Ctrl_Grp_parentConstraint1" 
 		"Pelvis_FK_CtrlW3" " -k 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp" 
+		"translate" " -type \"double3\" 0.65371835231780984 0.4160528182983394 0.89129124233808488"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp" 
+		"translateX" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp" 
+		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl" 
 		"Operating_Space" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl" 
@@ -1029,6 +1987,15 @@ createNode reference -n "EntityX9RigRN";
 		"Big_Toe_Tap_01" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl" 
 		"Big_Toe_Tap_02" " -k 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl|EntityX9Rig:L_Inner_Bank_Grp|EntityX9Rig:L_Outer_Bank_Grp|EntityX9Rig:L_Foot_Rev_Heel_Jnt" 
+		"rotateZ" " 0"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_PV_Ctrl_Grp" 
+		"translate" " -type \"double3\" 0.76670134894852737 1.84622049331665194 0.35083423689545579"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_PV_Ctrl_Grp" 
+		"translateX" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_PV_Ctrl_Grp" 
+		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp_parentConstraint1" 
 		"Transform_CtrlW0" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp_parentConstraint1" 
@@ -1037,8 +2004,22 @@ createNode reference -n "EntityX9RigRN";
 		"SpecimenX9W2" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp_parentConstraint1" 
 		"Pelvis_FK_CtrlW3" " -k 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl_Grp" 
+		"translate" " -type \"double3\" -0.6537180542945864 0.41605368256568864 0.8912928814658162"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl_Grp" 
+		"translateX" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl_Grp" 
+		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl" 
 		"Foot_Roll" " -k 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp" 
+		"translate" " -type \"double3\" -1.02013488535150731 1.84622068700884157 2.66794917193458758"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp" 
+		"translateX" " -av"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp" 
+		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp_parentConstraint1" 
 		"Transform_CtrlW0" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp_parentConstraint1" 
@@ -1061,11 +2042,34 @@ createNode reference -n "EntityX9RigRN";
 		"Pelvis_FK_CtrlW3" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Tail_Ctrl_Grp|EntityX9Rig:Tail_IK_Ctrl_Grp|EntityX9Rig:Main_Tail_02_IK_Ctrl_Grp|EntityX9Rig:Main_Tail_02_IK_Ctrl" 
 		"Operating_Space" " -k 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Tail_Ctrl_Grp|EntityX9Rig:Tail_IK_Ctrl_Grp|EntityX9Rig:L_Tail_01_IK_Ctrl_Grp|EntityX9Rig:L_Tail_01_IK_Ctrl" 
+		"Operating_Space" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Tail_Ctrl_Grp|EntityX9Rig:Tail_IK_Ctrl_Grp|EntityX9Rig:L_Tail_02_IK_Ctrl_Grp|EntityX9Rig:L_Tail_02_IK_Ctrl" 
+		"Operating_Space" " -k 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Tail_Ctrl_Grp|EntityX9Rig:Tail_IK_Ctrl_Grp|EntityX9Rig:R_Tail_01_IK_Ctrl_Grp|EntityX9Rig:R_Tail_01_IK_Ctrl" 
 		"Operating_Space" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Tail_Ctrl_Grp|EntityX9Rig:Tail_IK_Ctrl_Grp|EntityX9Rig:R_Tail_02_IK_Ctrl_Grp|EntityX9Rig:R_Tail_02_IK_Ctrl" 
 		"Operating_Space" " -k 1"
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Deformers|EntityX9Rig:Tail_IK_Curve_Grp|EntityX9Rig:Main_Tail_IK_Handle" 
+		"translate" " -type \"double3\" 1.50401785789433284 3.87136303929405967 -2.70220295472777439"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Deformers|EntityX9Rig:Tail_IK_Curve_Grp|EntityX9Rig:Main_Tail_IK_Handle" 
+		"rotate" " -type \"double3\" -16.27322718368909094 46.44467175660271607 -16.07388528469175881"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Deformers|EntityX9Rig:Tail_IK_Curve_Grp|EntityX9Rig:L_Tail_IK_Handle" 
+		"translate" " -type \"double3\" 3.70147704613087836 1.5089058137274769 -4.72783699258817336"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Deformers|EntityX9Rig:Tail_IK_Curve_Grp|EntityX9Rig:L_Tail_IK_Handle" 
+		"rotate" " -type \"double3\" -38.31324646604925732 32.16743886605195257 -47.849105175396204"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Deformers|EntityX9Rig:Tail_IK_Curve_Grp|EntityX9Rig:R_Tail_IK_Handle" 
+		"translate" " -type \"double3\" 3.01597830873155415 1.46705600800114477 -5.27370359249858822"
+		
+		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Deformers|EntityX9Rig:Tail_IK_Curve_Grp|EntityX9Rig:R_Tail_IK_Handle" 
+		"rotate" " -type \"double3\" 44.96182453032338344 -41.44241332514023668 123.22999439294170543"
+		
 		2 "EntityX9Rig:Geo" "displayType" " 2"
+		2 "EntityX9Rig:Ctrls" "visibility" " 1"
 		5 4 "EntityX9RigRN" "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Transform_Ctrl_Grp|EntityX9Rig:Transform_Ctrl.Master_Scale" 
 		"EntityX9RigRN.placeHolderList[1]" ""
 		5 4 "EntityX9RigRN" "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Transform_Ctrl_Grp|EntityX9Rig:Transform_Ctrl.L_Arm_IKFK" 
@@ -2849,18 +3853,70 @@ createNode reference -n "PlayerArms_SKMRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PlayerArms_SKMRN"
 		"PlayerArms_SKMRN" 0
-		"PlayerArms_SKMRN" 211
+		"PlayerArms_SKMRN" 236
 		0 "|PlayerArms_SKMRNfosterParent1|Chest_Ctrl_parentConstraint1" "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl|PlayerArms_SKM:Chest_Ctrl_Grp|PlayerArms_SKM:Chest_Ctrl" 
 		"-s -r "
 		1 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl|PlayerArms_SKM:Chest_Ctrl_Grp|PlayerArms_SKM:Chest_Ctrl" 
 		"blendParent1" "blendParent1" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl" 
-		"MasterScale" " -k 1"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Geometry|PlayerArms_SKM:PlayerArms_Geo|PlayerArms_SKM:PlayerArms_GeoShape" 
+		"visibility" " -k 0 1"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Geometry|PlayerArms_SKM:PlayerArms_Geo|PlayerArms_SKM:PlayerArms_GeoShape" 
+		"uvPivot" " -type \"double2\" 0.5 0.44366884231567383"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
+		"translate" " -type \"double3\" 9.0831757704903282 0 0"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
+		"translateX" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
+		"translateY" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
+		"translateZ" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt|PlayerArms_SKM:L_Arm_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
+		"translate" " -type \"double3\" -9.08307747073821048 -1.3343490934403235e-05 4.3817612151997309e-05"
+		
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
+		"translateX" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
+		"translateY" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
+		"translateZ" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
+		"rotate" " -type \"double3\" 9.3650725876421714e-05 -2.7729611559261726e-05 0.00029422646797287597"
+		
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt|PlayerArms_SKM:R_Arm_02_IK_Jnt" 
+		"rotate" " -type \"double3\" 0 0 -0.0006240230958075517"
 		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl|PlayerArms_SKM:Chest_Ctrl_Grp|PlayerArms_SKM:Chest_Ctrl" 
 		"blendParent1" " -k 1"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl|PlayerArms_SKM:Chest_Ctrl_Grp|PlayerArms_SKM:Chest_Ctrl|PlayerArms_SKM:Neck_Ctrl_Grp|PlayerArms_SKM:Neck_Ctrl|PlayerArms_SKM:Head_Ctrl_Grp|PlayerArms_SKM:Head_Ctrl_Offset_Grp|PlayerArms_SKM:Head_Ctrl" 
-		"Look_At" " -k 1"
-		2 "PlayerArms_SKM:Geo_Layer" "displayType" " 2"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp" 
+		"scale" " -type \"double3\" 0.03 0.03 0.03"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp" 
+		"scaleX" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp" 
+		"scaleY" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp" 
+		"scaleZ" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp|PlayerArms_SKM:L_Arm_Upper_Twist_IK_Grp|PlayerArms_SKM:L_Arm_Upper_Twist_IK_Jnt_Grp|PlayerArms_SKM:L_Arm_Upper_Twist_01_Jnt" 
+		"rotate" " -type \"double3\" 8.5377364625159387e-07 0 0"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp" 
+		"scale" " -type \"double3\" 0.03 0.03 0.03"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp" 
+		"scaleX" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp" 
+		"scaleY" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp" 
+		"scaleZ" " -av"
+		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp|PlayerArms_SKM:R_Arm_Upper_Twist_IK_Grp|PlayerArms_SKM:R_Arm_Upper_Twist_IK_Jnt_Grp|PlayerArms_SKM:R_Arm_Upper_Twist_01_Jnt" 
+		"rotate" " -type \"double3\" -5.3398770147091268e-05 -0.00043868709611085262 8.0747761103069462e-05"
+		
+		2 "|PlayerArms_SKM:PlayerArms_Geo_Temp|PlayerArms_SKM:PlayerArms_Geo_TempShape" 
+		"visibility" " -k 0 0"
+		2 "|PlayerArms_SKM:PlayerArms_Geo_Temp|PlayerArms_SKM:PlayerArms_Geo_TempShape" 
+		"uvPivot" " -type \"double2\" 0.5016556978225708 0.49300759516336257"
+		2 "PlayerArms_SKM:Geo_Layer" "displayType" " 0"
+		2 "PlayerArms_SKM:Ctrl_Layer" "visibility" " 1"
 		5 4 "PlayerArms_SKMRN" "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl.MasterScale" 
 		"PlayerArms_SKMRN.placeHolderList[1]" ""
 		5 4 "PlayerArms_SKMRN" "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl.translateZ" 
@@ -3289,7 +4345,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 921\n            -height 512\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n"
 		+ "        modelEditor -e \n            -camera \"|PlayerCam\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 0\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 32768\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n"
 		+ "            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n"
-		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1848\n            -height 1070\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
+		+ "            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -bluePencil 1\n            -greasePencils 0\n            -excludeObjectPreset \"All\" \n            -shadows 0\n            -captureSequenceNumber -1\n            -width 1848\n            -height 1069\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n"
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -autoExpandAllAnimatedShapes 1\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n"
 		+ "            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -showUfeItems 1\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n"
 		+ "            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"print(\\\"\\\")\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n"
@@ -3316,13 +4372,13 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "                -maxConstantTransparency 1\n                -objectFilterShowInHUD 1\n                -isFiltered 0\n                -colorResolution 4 4 \n                -bumpResolution 4 4 \n                -textureCompression 0\n                -transparencyAlgorithm \"frontAndBackCull\" \n                -transpInShadows 0\n                -cullingOverride \"none\" \n                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n"
 		+ "                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -bluePencil 1\n                -greasePencils 0\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n"
 		+ "                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName; };\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|PlayerCam\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1848\\n    -height 1070\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|PlayerCam\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1848\\n    -height 1070\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|PlayerCam\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1848\\n    -height 1069\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"|PlayerCam\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 0\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 32768\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -bluePencil 1\\n    -greasePencils 0\\n    -excludeObjectPreset \\\"All\\\" \\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 1848\\n    -height 1069\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "5E35BF25-4716-133E-5A8D-2DB5CABCBC38";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 60 -ast 1 -aet 100 ";
+	setAttr ".b" -type "string" "playbackOptions -min 1 -max 67 -ast 1 -aet 100 ";
 	setAttr ".st" 6;
 createNode animCurveTL -n "R_Leg_IK_Ctrl_translateX";
 	rename -uid "07460EF1-415C-4A1B-DE3E-2E81BA1BFB4B";
@@ -3494,32 +4550,32 @@ createNode animCurveTL -n "L_Arm_IK_Ctrl_translateX";
 	rename -uid "A3DBC2E2-40F6-B611-30A4-37957CED0141";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 -1.0399707816612345 10 -1.01920372390196
-		 19 -1.3380117356519514 43 -1.4455679506367762 60 -1.4243017051559239;
+		 19 -1.1842319752921155 43 -1.4455679506367762 60 -1.4243017051559235;
 createNode animCurveTL -n "L_Arm_IK_Ctrl_translateY";
 	rename -uid "121CB0B9-4D93-B236-ECA2-B7AE27F56DFC";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 1.5255757148452014 10 -0.21467286612081538
-		 19 0.24734268273868532 43 0.82626239987881078 60 0.9112818851134934;
+		 19 -0.29745132213046555 43 -0.12538483906674136 60 -0.15091718799275844;
 createNode animCurveTL -n "L_Arm_IK_Ctrl_translateZ";
 	rename -uid "1C0BB6C2-4635-2F96-40CC-0A8CF7D63129";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 1.4437415740475239 10 1.6252517597074245
-		 19 2.1715862025986761 43 2.2070140779998839 60 2.2263725286089047;
+		 19 1.6749397015553655 43 2.2070140779998839 60 1.7780057804999281;
 createNode animCurveTL -n "R_Arm_IK_Ctrl_translateX";
 	rename -uid "45DC7310-4267-AFF7-70A1-07B2B4501A77";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 1.2853356033897767 10 1.3061026611490512
-		 19 0.98729464939905975 43 0.87973843441423494 60 0.90100467989508726;
+		 19 1.1410744097588956 43 0.87973843441423494 60 0.9010046798950877;
 createNode animCurveTL -n "R_Arm_IK_Ctrl_translateY";
 	rename -uid "F0AEA045-485A-E929-8126-D7A835F273B0";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 1.8676489110914454 10 0.12740033012542873
-		 19 0.58941587898492931 43 1.1683355961250548 60 1.2533550813597374;
+		 19 0.044621874115778448 43 0.21668835717950263 60 0.19115600825348555;
 createNode animCurveTL -n "R_Arm_IK_Ctrl_translateZ";
 	rename -uid "4C664E64-4A0C-1E2F-6E10-319EF00208B0";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 1.6962463356243749 10 1.8777565212842759
-		 19 2.4240909641755275 43 2.4595188395767353 60 2.4788772901857561;
+		 19 1.927444463132217 43 2.4595188395767353 60 2.0305105420767795;
 createNode animCurveTU -n "R_Arm_IK_Ctrl_visibility";
 	rename -uid "5402820E-4298-8EF5-1E92-1984A4D87ED4";
 	setAttr ".tan" 9;
@@ -3529,17 +4585,17 @@ createNode animCurveTA -n "R_Arm_IK_Ctrl_rotateX";
 	rename -uid "BB1A1FB7-454C-67A7-0FAD-32A1D05E0CAC";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 -61.406799814945735 10 -16.475139860691513
-		 19 -33.142248635601256 43 -41.331508737406864 60 -41.331508737406864;
+		 19 -23.639030569374402 43 -17.841724447225882 60 -19.545788118938567;
 createNode animCurveTA -n "R_Arm_IK_Ctrl_rotateY";
 	rename -uid "527F1EF1-4A82-68C8-B440-8BB0CA269DBD";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 33.285108876466971 10 16.732061456412456
-		 19 26.999954718522261 43 40.420248246664066 60 40.420248246664066;
+		 19 20.192331295299503 43 29.012073070664353 60 30.248665513018828;
 createNode animCurveTA -n "R_Arm_IK_Ctrl_rotateZ";
 	rename -uid "87921BD1-42DC-637A-C1A3-D3B30711F93B";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 3.7404191970826255 10 21.765842483307008
-		 19 12.058141226484457 43 14.464879091686608 60 14.464879091686608;
+		 19 19.820797630563209 43 35.268971028482625 60 33.809486981389043;
 createNode animCurveTU -n "R_Arm_IK_Ctrl_scaleX";
 	rename -uid "FDC6CE2C-4DAB-7812-462A-35A526ABAFFE";
 	setAttr ".tan" 10;
@@ -3566,17 +4622,17 @@ createNode animCurveTA -n "L_Arm_IK_Ctrl_rotateX";
 	rename -uid "AE043B9A-4A0A-8A59-356C-DD88B166438A";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 -61.271485151348017 10 -10.256912848320477
-		 19 -31.176954242565785 43 -51.135484746979465 60 -51.135484746979465;
+		 19 -18.248524309272714 43 -26.795845007275059 60 -28.878920386606644;
 createNode animCurveTA -n "L_Arm_IK_Ctrl_rotateY";
 	rename -uid "51DFACD0-4CE7-4208-A4CA-458B95960C53";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 -35.48436991759371 10 -27.983015535943458
-		 19 -32.056630146672063 43 -24.819241981957028 60 -24.819241981957028;
+		 19 -31.119137353553455 43 -22.852370630152571 60 -23.0621283821121;
 createNode animCurveTA -n "L_Arm_IK_Ctrl_rotateZ";
 	rename -uid "B9C83D1A-4CF4-DFB2-0E65-179D7C535A61";
 	setAttr ".tan" 10;
 	setAttr -s 5 ".ktv[0:4]"  1 -2.2949419158943556 10 -32.539804657966478
-		 19 -25.416166576894948 43 -8.9219222508038758 60 -8.9219222508038758;
+		 19 -28.264722704551016 43 -11.65280016973063 60 -11.457125894038375;
 createNode animCurveTU -n "L_Arm_IK_Ctrl_scaleX";
 	rename -uid "F0EA961A-4043-25AC-49E5-6DA9BE0DD2C0";
 	setAttr ".tan" 10;
@@ -4046,27 +5102,27 @@ createNode animCurveTL -n "R_Leg_IK_PV_Ctrl_translateZ";
 createNode animCurveTL -n "Head_FK_Ctrl_translateX";
 	rename -uid "2ECE7DE4-4D5C-C5C0-A34B-569B15BCA977";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 19 0 32 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 19 0 32 0 60 0;
 createNode animCurveTL -n "Head_FK_Ctrl_translateY";
 	rename -uid "15049DB4-4EE2-9A70-9AFB-9AB6028C7D62";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 19 0 32 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 19 0 32 0 60 0;
 createNode animCurveTL -n "Head_FK_Ctrl_translateZ";
 	rename -uid "468BB3E4-4DA7-0A43-E300-40BA474D0848";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 19 0 32 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 19 0 32 0 60 0;
 createNode animCurveTL -n "Jaw_01_FK_Ctrl_translateX";
 	rename -uid "B0A10A96-4C6C-B3C7-B83F-73AAFAC60F99";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 30 0 67 0;
 createNode animCurveTL -n "Jaw_01_FK_Ctrl_translateY";
 	rename -uid "58CDAEED-46AC-9679-5B7F-708B45D2A6D5";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 30 0 67 0;
 createNode animCurveTL -n "Jaw_01_FK_Ctrl_translateZ";
 	rename -uid "0E38B2DA-4EE4-D903-EA2F-B0A91BFE83C1";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 30 0 67 0;
 createNode animCurveTL -n "L_Ear_01_FK_Ctrl_translateX";
 	rename -uid "155A41E6-4971-E90C-601A-ADAE51F38435";
 	setAttr ".tan" 10;
@@ -4106,27 +5162,27 @@ createNode animCurveTL -n "L_Ear_03_FK_Ctrl_translateZ";
 createNode animCurveTL -n "Neck_01_FK_Ctrl_translateX";
 	rename -uid "E12847F1-49A5-4088-EB40-1B923934A39B";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 19 0 32 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 19 0 32 0 60 0;
 createNode animCurveTL -n "Neck_01_FK_Ctrl_translateY";
 	rename -uid "F47369D2-4785-EDC0-BD36-8BB0408A07F5";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 19 0 32 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 19 0 32 0 60 0;
 createNode animCurveTL -n "Neck_01_FK_Ctrl_translateZ";
 	rename -uid "0EEECC08-4B28-C647-CFF1-7F95A68E0FB3";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 19 0 32 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 19 0 32 0 60 0;
 createNode animCurveTL -n "Neck_02_FK_Ctrl_translateX";
 	rename -uid "5A5807C8-4253-E89C-58E1-71B66C54EB7E";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 19 0 32 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 19 0 32 0 60 0;
 createNode animCurveTL -n "Neck_02_FK_Ctrl_translateY";
 	rename -uid "DDC23662-4915-4013-842E-ECB699FC7DE2";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 19 0 32 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 19 0 32 0 60 0;
 createNode animCurveTL -n "Neck_02_FK_Ctrl_translateZ";
 	rename -uid "A3622BF3-4E3D-1570-806C-018391EDC025";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 19 0 32 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 19 0 32 0 60 0;
 createNode animCurveTL -n "R_Ear_01_FK_Ctrl_translateX";
 	rename -uid "534F7DD0-43B4-4B81-667F-248168ED1E38";
 	setAttr ".tan" 10;
@@ -4166,16 +5222,17 @@ createNode animCurveTL -n "R_Ear_03_FK_Ctrl_translateZ";
 createNode animCurveTL -n "Pelvis_FK_Ctrl_translateX";
 	rename -uid "CD6CDA0B-4586-8B70-8EEB-15BE4C96DCD3";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 9 0 22 0 32 0 60 0;
+	setAttr -s 6 ".ktv[0:5]"  1 -0.645770975866089 9 0 22 0 32 -0.18395680822416871
+		 63 -0.22079788960350832 67 -0.70202921604615431;
 createNode animCurveTL -n "Pelvis_FK_Ctrl_translateY";
 	rename -uid "49CE0AB2-4D18-26D8-835E-E2A7F283C4A3";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 9 0.51290134306907986 22 0.57501519874846707
-		 32 0.83572271193342496 60 0.60992143078092886;
+	setAttr -s 6 ".ktv[0:5]"  1 1.1102230246251565e-16 9 0.51290134306907986
+		 22 0.57501519874846707 32 0.83572271193342496 63 0.69965222685769057 67 1.5822831461839064;
 createNode animCurveTL -n "Pelvis_FK_Ctrl_translateZ";
 	rename -uid "18C075F7-4427-15F7-07C5-399FD85829AF";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 9 0 22 0 32 0 60 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 9 0 22 0 32 0 63 0 67 -0.13175640502798736;
 createNode animCurveTL -n "Spine_01_FK_Ctrl_translateX";
 	rename -uid "087C15A2-49B3-F079-2837-11BEC49242D1";
 	setAttr ".tan" 10;
@@ -4215,15 +5272,18 @@ createNode animCurveTL -n "Spine_03_FK_Ctrl_translateZ";
 createNode animCurveTL -n "L_Tail_01_IK_Ctrl_translateX";
 	rename -uid "4018FD8E-4DF2-71D8-6580-48B8618D9507";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -7.1912569133975461;
+	setAttr -s 6 ".ktv[0:5]"  1 0.22753944790103642 10 0.10623092099483647
+		 26 0.50423162528698406 38 0.5257418903813732 53 0.5257418903813732 67 -0.20352488067268468;
 createNode animCurveTL -n "L_Tail_01_IK_Ctrl_translateY";
 	rename -uid "F42B5EDF-4C1F-9576-DA94-28ACC492DD87";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -0.82740431595534125;
+	setAttr -s 6 ".ktv[0:5]"  1 -0.93311343160740323 10 -0.78151116686031907
+		 26 -0.88884682545319371 38 -0.93022875120574822 53 -0.93022875120574822 67 -1.6246453667863126;
 createNode animCurveTL -n "L_Tail_01_IK_Ctrl_translateZ";
 	rename -uid "1597C4DD-4453-BD80-B83D-00872187C865";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -6.1251137215045039;
+	setAttr -s 6 ".ktv[0:5]"  1 -0.2734677557175782 10 1.148923122298648
+		 26 -0.11660202395531627 38 -0.39439382601896567 53 -0.39439382601896567 67 0.0015371206701048426;
 createNode animCurveTL -n "L_Tail_02_IK_Ctrl_translateX";
 	rename -uid "4126C1CD-4D0C-2B40-58E7-0BACE21EB3A9";
 	setAttr ".tan" 10;
@@ -4239,51 +5299,57 @@ createNode animCurveTL -n "L_Tail_02_IK_Ctrl_translateZ";
 createNode animCurveTL -n "L_Tail_Root_IK_Ctrl_translateX";
 	rename -uid "83555707-410D-75CE-CE07-5F8BA95B6A6D";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -3.5388358909926865e-14;
+	setAttr ".ktv[0]"  1 0.0081292377898026878;
 createNode animCurveTL -n "L_Tail_Root_IK_Ctrl_translateY";
 	rename -uid "B74FEE7A-4BEA-7B9C-705F-5F8C0EF6E3EE";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -4.6369158512860054e-15;
+	setAttr ".ktv[0]"  1 -0.017940073366761265;
 createNode animCurveTL -n "L_Tail_Root_IK_Ctrl_translateZ";
 	rename -uid "6FF1917E-43B5-CACD-AE05-4989C7AB9E94";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0;
+	setAttr ".ktv[0]"  1 0.083270468712110662;
 createNode animCurveTL -n "Main_Tail_01_IK_Ctrl_translateX";
 	rename -uid "B43EF92B-43EF-6ABE-D750-EB80FFE45C57";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0.064375414685206661;
+	setAttr -s 5 ".ktv[0:4]"  1 -0.10663950944372913 13 0.45504659611355402
+		 26 -0.29116645881979364 43 -0.29116645881979364 67 -0.031511055432517705;
 createNode animCurveTL -n "Main_Tail_01_IK_Ctrl_translateY";
 	rename -uid "0A8AA3E8-431B-9063-0515-B089E06DFE4B";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1.2551015672139452;
+	setAttr -s 5 ".ktv[0:4]"  1 1.8649168001488952 13 1.1642716785979417
+		 26 1.5521063886568189 43 1.5521063886568189 67 3.3874890172164158;
 createNode animCurveTL -n "Main_Tail_01_IK_Ctrl_translateZ";
 	rename -uid "72D2F1EB-4097-6D3C-19BA-88A73FCBA917";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -1.3890845821007307;
+	setAttr -s 5 ".ktv[0:4]"  1 0.90615283639684474 13 -0.48001212876298643
+		 26 -1.3776402971210988 43 -1.3776402971210988 67 -1.377640297121097;
 createNode animCurveTL -n "Main_Tail_02_IK_Ctrl_translateX";
 	rename -uid "5758025A-4A94-93A8-C984-219889E12415";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -0.71624794135767866;
+	setAttr -s 2 ".ktv[0:1]"  1 -0.67383028753528462 12 -0.75156126619524255;
 createNode animCurveTL -n "Main_Tail_02_IK_Ctrl_translateY";
 	rename -uid "7CDD2C41-499B-2FB9-F066-CCAD217E9A05";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -0.2985685171158966;
+	setAttr -s 2 ".ktv[0:1]"  1 -0.46877458697960767 12 -0.18495182419007994;
 createNode animCurveTL -n "Main_Tail_02_IK_Ctrl_translateZ";
 	rename -uid "4AC17D48-4295-A452-2468-0E9D9E1F741D";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0.013585323702108654;
+	setAttr -s 2 ".ktv[0:1]"  1 -0.016066581535489132 12 -0.51871837656554975;
 createNode animCurveTL -n "R_Tail_01_IK_Ctrl_translateX";
 	rename -uid "40781A04-4021-2294-68DD-E694B2167485";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 5.7826579355909438;
+	setAttr -s 6 ".ktv[0:5]"  1 -0.22198279081335723 10 0.012839177558075848
+		 26 -0.56288893247781313 38 -0.62097478705767861 53 -0.62097478705767861 67 0.19321237128881658;
 createNode animCurveTL -n "R_Tail_01_IK_Ctrl_translateY";
 	rename -uid "E7A1674B-41B7-C180-8AF8-D183D75262B3";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0.53590634916555568;
+	setAttr -s 6 ".ktv[0:5]"  1 0.98075507603226619 10 0.76021761696769874
+		 26 0.99458903612148397 38 1.0596283967302293 53 1.0596283967302293 67 1.6880381859325126;
 createNode animCurveTL -n "R_Tail_01_IK_Ctrl_translateZ";
 	rename -uid "B2FB7BF2-44BA-A550-6D20-BB87CEF094DE";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -4.4150456054377747;
+	setAttr -s 6 ".ktv[0:5]"  1 -0.13571531027215342 10 0.68111439809033603
+		 26 -0.50920163800421192 38 -0.7640730013580832 53 -0.7640730013580832 67 -0.4279090801436316;
 createNode animCurveTL -n "R_Tail_02_IK_Ctrl_translateX";
 	rename -uid "B7563B4A-4C41-2993-D6E9-7DA89716DD2F";
 	setAttr ".tan" 10;
@@ -4299,15 +5365,15 @@ createNode animCurveTL -n "R_Tail_02_IK_Ctrl_translateZ";
 createNode animCurveTL -n "R_Tail_Root_IK_Ctrl_translateX";
 	rename -uid "95010119-4D24-4F3E-4F2C-99B622407785";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0.2042092614508752;
+	setAttr ".ktv[0]"  1 0.016049556790167469;
 createNode animCurveTL -n "R_Tail_Root_IK_Ctrl_translateY";
 	rename -uid "B6332192-48AF-2FCD-2801-3E8DBEDC0E28";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0.14614240604437526;
+	setAttr ".ktv[0]"  1 -0.020990864187092739;
 createNode animCurveTL -n "R_Tail_Root_IK_Ctrl_translateZ";
 	rename -uid "9942ECFD-4860-5E75-2D29-3890714C1509";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -0.4634864857006058;
+	setAttr ".ktv[0]"  1 -0.15702875407953171;
 createNode animCurveTL -n "Transform_Ctrl_translateX";
 	rename -uid "F0DE5762-4619-C560-F5C7-4E907FEEA0A5";
 	setAttr ".tan" 10;
@@ -4419,18 +5485,18 @@ createNode animCurveTL -n "R_Grab_Ctrl_translateZ";
 createNode animCurveTL -n "Look_At_Ctrl_translateX";
 	rename -uid "1BF3A750-4D52-9462-6F05-9EA9DEBF20F1";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 -2.9020244763352797e-14 11 -18.398575061244934
-		 19 -8.5047688127895391 43 2.3438956811471261;
+	setAttr -s 5 ".ktv[0:4]"  1 -2.9020244763352797e-14 11 -18.398575061244934
+		 30 -8.5047688127895391 43 2.3438956811471261 67 1.4806985064226581;
 createNode animCurveTL -n "Look_At_Ctrl_translateY";
 	rename -uid "407EFDB5-40B5-88AA-30C5-4395DD1851B5";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 1.9552248632818666e-15 11 -25.470304897936828
-		 19 -4.2669253568718926 43 -0.66476346638263928;
+	setAttr -s 5 ".ktv[0:4]"  1 1.9552248632818666e-15 11 -25.470304897936828
+		 30 -4.2669253568718926 43 -0.66476346638263928 67 -1.9892698613180813;
 createNode animCurveTL -n "Look_At_Ctrl_translateZ";
 	rename -uid "2372B54F-4B26-CBCE-FA2E-4580B391ED33";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 11 -1.2004797085200547 19 -1.0398441909859337
-		 43 -6.1781944216497946;
+	setAttr -s 5 ".ktv[0:4]"  1 0 11 -1.2004797085200547 30 -1.0398441909859337
+		 43 -6.1781944216497946 67 -14.340993410088192;
 createNode animCurveTL -n "Look_Up_Ctrl_translateX";
 	rename -uid "A2ECBFCB-444B-B614-93F5-9BBC05EADB5B";
 	setAttr ".tan" 10;
@@ -4597,37 +5663,37 @@ createNode animCurveTU -n "Spine_03_FK_Ctrl_Follow_Rotate";
 createNode animCurveTU -n "Main_Tail_02_IK_Ctrl_visibility";
 	rename -uid "CA224A09-403E-0C7B-5C23-F2BF35725AE9";
 	setAttr ".tan" 9;
-	setAttr ".ktv[0]"  1 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 2 ".ktv[0:1]"  1 1 12 1;
+	setAttr -s 2 ".kot[0:1]"  5 5;
 createNode animCurveTA -n "Main_Tail_02_IK_Ctrl_rotateX";
 	rename -uid "2368EB89-4399-A63A-2DD6-37834B4456D2";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -4.0345551834452111;
+	setAttr -s 2 ".ktv[0:1]"  1 -4.4782820947381126 12 7.2791209325535782;
 createNode animCurveTA -n "Main_Tail_02_IK_Ctrl_rotateY";
 	rename -uid "B7B07777-46EE-A442-29E1-D2870E9E172B";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 2.0828556761837929;
+	setAttr -s 2 ".ktv[0:1]"  1 0.74489581128918236 12 27.614823925451166;
 createNode animCurveTA -n "Main_Tail_02_IK_Ctrl_rotateZ";
 	rename -uid "A9C1E6B4-4C2D-4F2C-E73B-6E815449ADC4";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -19.23208217952855;
+	setAttr -s 2 ".ktv[0:1]"  1 -37.068859663848094 12 -12.778384027380957;
 createNode animCurveTU -n "Main_Tail_02_IK_Ctrl_scaleX";
 	rename -uid "1A58899D-41DB-CA96-2141-E6BDAAFD4EC5";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 2 ".ktv[0:1]"  1 1 12 1;
 createNode animCurveTU -n "Main_Tail_02_IK_Ctrl_scaleY";
 	rename -uid "92BDE825-4186-3684-F194-9591E7E6A695";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 2 ".ktv[0:1]"  1 1 12 1;
 createNode animCurveTU -n "Main_Tail_02_IK_Ctrl_scaleZ";
 	rename -uid "49E99E06-4EEA-1A4D-89CD-1C9A786204E5";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 2 ".ktv[0:1]"  1 1 12 1;
 createNode animCurveTU -n "Main_Tail_02_IK_Ctrl_Operating_Space";
 	rename -uid "BD843A04-42A8-60C4-D6BF-F7BD011F5D59";
 	setAttr ".tan" 9;
-	setAttr ".ktv[0]"  1 4;
-	setAttr ".kot[0]"  5;
+	setAttr -s 2 ".ktv[0:1]"  1 4 12 4;
+	setAttr -s 2 ".kot[0:1]"  5 5;
 createNode animCurveTU -n "Transform_Ctrl_visibility";
 	rename -uid "7DE4CB78-4635-7917-2C40-4A808504C86C";
 	setAttr ".tan" 9;
@@ -4857,43 +5923,43 @@ createNode animCurveTU -n "R_Ear_01_FK_Ctrl_Follow_Rotate";
 createNode animCurveTU -n "Head_FK_Ctrl_visibility";
 	rename -uid "0EBE7AE8-41B7-00BF-633F-1491169941EB";
 	setAttr ".tan" 9;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
-	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
 createNode animCurveTA -n "Head_FK_Ctrl_rotateX";
 	rename -uid "819DEC1E-4462-A664-AA81-54BAB1DB59D0";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 3.0180343119731212 19 -2.3821460195529327
-		 32 0.028525265371021725 45 0.29712081569394394 60 -2.3689997351586669;
+	setAttr -s 4 ".ktv[0:3]"  1 3.0180343119731212 19 -2.3821460195529327
+		 32 0.62133388941264189 60 -2.4017394878156741;
 createNode animCurveTA -n "Head_FK_Ctrl_rotateY";
 	rename -uid "4139CD93-4738-193A-C32E-F7B0E7169E35";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0.026081518832855737 19 -0.46964474346321422
-		 32 -0.35195362138334368 45 -0.6322836751910198 60 -0.62621842123173055;
+	setAttr -s 4 ".ktv[0:3]"  1 0.026081518832855737 19 -0.46964474346321422
+		 32 0.39890962804739899 60 0.089731478771299195;
 createNode animCurveTA -n "Head_FK_Ctrl_rotateZ";
 	rename -uid "EE8D8B58-4553-D658-B017-ECB8D929318D";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 -1.6961741606693379 19 -3.3449791795865562
-		 32 -4.7844757048976332 45 -8.4695176630237139 60 -9.614895428702841;
+	setAttr -s 4 ".ktv[0:3]"  1 -1.6961741606693379 19 -3.3449791795865562
+		 32 3.1441923565160224 60 -6.0351453180711667;
 createNode animCurveTU -n "Head_FK_Ctrl_scaleX";
 	rename -uid "61CCBC17-46A3-7224-1A82-B7A42A469756";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Head_FK_Ctrl_scaleY";
 	rename -uid "6EA1D487-4F50-6094-805E-E980951ECA84";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Head_FK_Ctrl_scaleZ";
 	rename -uid "4211E65D-4A3F-9BE2-8BA8-A6ADD59215F5";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Head_FK_Ctrl_Follow_Translate";
 	rename -uid "FDA80887-4F3C-FF45-A6C5-D790060CB238";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Head_FK_Ctrl_Follow_Rotate";
 	rename -uid "66849E8B-4F17-4576-E5F6-7387A1352EAA";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "L_Tail_Root_IK_Ctrl_visibility";
 	rename -uid "7FFF93DE-49F5-73BD-8F5C-19878053F73A";
 	setAttr ".tan" 9;
@@ -4902,15 +5968,15 @@ createNode animCurveTU -n "L_Tail_Root_IK_Ctrl_visibility";
 createNode animCurveTA -n "L_Tail_Root_IK_Ctrl_rotateX";
 	rename -uid "419E3DBC-464B-A140-293F-D3AC197D8F0B";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0;
+	setAttr ".ktv[0]"  1 -5.1491000159844287;
 createNode animCurveTA -n "L_Tail_Root_IK_Ctrl_rotateY";
 	rename -uid "899FC39C-44E7-FF4D-E4E1-BD82F6B3AEEC";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 21.501545794060871;
+	setAttr ".ktv[0]"  1 7.460135211016949;
 createNode animCurveTA -n "L_Tail_Root_IK_Ctrl_rotateZ";
 	rename -uid "2487AF65-4900-9A16-B674-01AF20D1B815";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0;
+	setAttr ".ktv[0]"  1 -1.5932967862542551;
 createNode animCurveTU -n "L_Tail_Root_IK_Ctrl_scaleX";
 	rename -uid "B514F9AE-412B-3D19-F0DD-0E9677379C5D";
 	setAttr ".tan" 10;
@@ -4936,15 +6002,15 @@ createNode animCurveTU -n "R_Tail_Root_IK_Ctrl_visibility";
 createNode animCurveTA -n "R_Tail_Root_IK_Ctrl_rotateX";
 	rename -uid "34B51975-4286-B483-2002-13BBC9E134D9";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0;
+	setAttr ".ktv[0]"  1 -0.045843552073532003;
 createNode animCurveTA -n "R_Tail_Root_IK_Ctrl_rotateY";
 	rename -uid "4DC5D01D-4E2C-3AEA-3520-0B9C2B972372";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -54.164789889877326;
+	setAttr ".ktv[0]"  1 -3.2024950612763932;
 createNode animCurveTA -n "R_Tail_Root_IK_Ctrl_rotateZ";
 	rename -uid "BC5CC461-48A7-F73A-8A08-B39E3A361C70";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0;
+	setAttr ".ktv[0]"  1 0.57610533382605267;
 createNode animCurveTU -n "R_Tail_Root_IK_Ctrl_scaleX";
 	rename -uid "70FB20DC-4628-4380-2D5C-E3AF981FB75B";
 	setAttr ".tan" 10;
@@ -5482,37 +6548,40 @@ createNode animCurveTU -n "R_Finger_01_Knuckle_01_FK_Ctrl_Follow_Rotate";
 createNode animCurveTU -n "Main_Tail_01_IK_Ctrl_visibility";
 	rename -uid "2FD06901-4D6D-C950-1C65-C29EE70F1FDA";
 	setAttr ".tan" 9;
-	setAttr ".ktv[0]"  1 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  1 1 13 1 26 1 43 1 67 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
 createNode animCurveTA -n "Main_Tail_01_IK_Ctrl_rotateX";
 	rename -uid "C26E3065-423D-C1D9-BA7C-BF83978ED04B";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -43.752370456305982;
+	setAttr -s 5 ".ktv[0:4]"  1 -22.837548750481311 13 -12.225436082187603
+		 26 17.676985620919162 43 -35.711043680811599 67 -78.405537153821157;
 createNode animCurveTA -n "Main_Tail_01_IK_Ctrl_rotateY";
 	rename -uid "F6F6EEA9-41CA-37D0-E742-9B873D047CA1";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 75.189935468876399;
+	setAttr -s 5 ".ktv[0:4]"  1 -36.322818721423083 13 33.408422992825493
+		 26 62.161186191089797 43 31.826526504320782 67 59.584402129203532;
 createNode animCurveTA -n "Main_Tail_01_IK_Ctrl_rotateZ";
 	rename -uid "A7E2BE16-4133-6C59-093E-9E8950F91A77";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -44.719874122610534;
+	setAttr -s 5 ".ktv[0:4]"  1 40.638807167884643 13 -8.736850323750156
+		 26 -21.815221056927562 43 -78.880218746082477 67 -134.73627432141615;
 createNode animCurveTU -n "Main_Tail_01_IK_Ctrl_scaleX";
 	rename -uid "F7F9F5F2-4DF0-481B-A851-B8B6AC256D87";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 13 1 26 1 43 1 67 1;
 createNode animCurveTU -n "Main_Tail_01_IK_Ctrl_scaleY";
 	rename -uid "F0A35C02-484E-DBB7-9DC0-92B7D451B8F5";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 13 1 26 1 43 1 67 1;
 createNode animCurveTU -n "Main_Tail_01_IK_Ctrl_scaleZ";
 	rename -uid "1B9168D7-4B2F-06F9-88DA-D5B00B7F505A";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 13 1 26 1 43 1 67 1;
 createNode animCurveTU -n "Main_Tail_01_IK_Ctrl_Operating_Space";
 	rename -uid "CE5221F7-47ED-6D30-7983-D3B635DE9B03";
 	setAttr ".tan" 9;
-	setAttr ".ktv[0]"  1 3;
-	setAttr ".kot[0]"  5;
+	setAttr -s 5 ".ktv[0:4]"  1 3 13 3 26 3 43 3 67 3;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
 createNode animCurveTU -n "R_Finger_03_Knuckle_03_FK_Ctrl_visibility";
 	rename -uid "CEAC177C-4844-6D53-140C-C4B8132357F3";
 	setAttr ".tan" 9;
@@ -5553,43 +6622,43 @@ createNode animCurveTU -n "R_Finger_03_Knuckle_03_FK_Ctrl_Follow_Rotate";
 createNode animCurveTU -n "Pelvis_FK_Ctrl_visibility";
 	rename -uid "31BC3761-4662-6727-C2B9-C5B108BE7701";
 	setAttr ".tan" 9;
-	setAttr -s 5 ".ktv[0:4]"  1 1 9 1 22 1 32 1 60 1;
-	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+	setAttr -s 6 ".ktv[0:5]"  1 1 9 1 22 1 32 1 63 1 67 1;
+	setAttr -s 6 ".kot[0:5]"  5 5 5 5 5 5;
 createNode animCurveTA -n "Pelvis_FK_Ctrl_rotateX";
 	rename -uid "10905DD3-4617-F858-A596-3B8BD9CADF4E";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 9 0 22 -8.7910282592123679 32 -13.183816896731667
-		 60 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 9 0 22 -8.7910282592123679 32 -13.183816896731667
+		 63 0 67 0;
 createNode animCurveTA -n "Pelvis_FK_Ctrl_rotateY";
 	rename -uid "404F71BF-4A25-DA61-BCE7-4189FCB32AB8";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 9 0 22 4.9696166897867437e-17 32 -2.4848083448933731e-17
-		 60 0;
+	setAttr -s 6 ".ktv[0:5]"  1 0 9 0 22 4.9696166897867437e-17 32 -2.4848083448933731e-17
+		 63 0 67 0;
 createNode animCurveTA -n "Pelvis_FK_Ctrl_rotateZ";
 	rename -uid "0E5180D0-43E9-306D-E34D-95BC6421FCAB";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0 9 10.465431799221319 22 -4.1709225555365794
-		 32 -0.56862912488682904 60 -3.5135741581075619;
+	setAttr -s 6 ".ktv[0:5]"  1 0 9 10.465431799221319 22 -4.1709225555365794
+		 32 -0.56862912488682904 63 -3.5135741581075619 67 -3.5135741581075619;
 createNode animCurveTU -n "Pelvis_FK_Ctrl_scaleX";
 	rename -uid "BCF1C11C-448E-1CD5-5C57-49BC75F94B85";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 9 1 22 1 32 1 60 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 9 1 22 1 32 1 63 1 67 1;
 createNode animCurveTU -n "Pelvis_FK_Ctrl_scaleY";
 	rename -uid "AD15FAFF-466F-BCB9-33D6-25B7027B87DD";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 9 1 22 1 32 1 60 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 9 1 22 1 32 1 63 1 67 1;
 createNode animCurveTU -n "Pelvis_FK_Ctrl_scaleZ";
 	rename -uid "993B54E8-44AF-0BD0-29D3-89A5EBE4C150";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 9 1 22 1 32 1 60 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 9 1 22 1 32 1 63 1 67 1;
 createNode animCurveTU -n "Pelvis_FK_Ctrl_Follow_Translate";
 	rename -uid "DDAB8187-4993-2C85-10A9-C58A62E9C6C5";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 9 1 22 1 32 1 60 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 9 1 22 1 32 1 63 1 67 1;
 createNode animCurveTU -n "Pelvis_FK_Ctrl_Follow_Rotate";
 	rename -uid "38450037-4C29-DDEC-5075-E9ABACB084B0";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 9 1 22 1 32 1 60 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 9 1 22 1 32 1 63 1 67 1;
 createNode animCurveTU -n "L_Finger_01_Knuckle_01_FK_Ctrl_visibility";
 	rename -uid "88F104C1-4CD0-3BE2-11DB-4F871CEC55D6";
 	setAttr ".tan" 9;
@@ -5954,43 +7023,43 @@ createNode animCurveTU -n "L_Finger_01_Knuckle_03_FK_Ctrl_Follow_Rotate";
 createNode animCurveTU -n "Neck_02_FK_Ctrl_visibility";
 	rename -uid "D21BE79F-4A9F-3439-942F-11B673556500";
 	setAttr ".tan" 9;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
-	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
 createNode animCurveTA -n "Neck_02_FK_Ctrl_rotateX";
 	rename -uid "834F5890-4404-BB7E-7DAC-33BC308BA03D";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 3.0180343119731212 19 -2.914334861580957
-		 32 -0.49992300517820543 45 -0.22029512251862013 60 -2.882538486252209;
+	setAttr -s 4 ".ktv[0:3]"  1 3.0180343119731212 19 -2.914334861580957
+		 32 0.088296557594542677 60 -2.8649864934148885;
 createNode animCurveTA -n "Neck_02_FK_Ctrl_rotateY";
 	rename -uid "27F2F4CA-4EBA-6916-818C-63AD1E479724";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0.026081518832855737 19 -0.61145088902646128
-		 32 -0.5070886694901896 45 -0.82104978362723535 60 -0.82528906606796393;
+	setAttr -s 4 ".ktv[0:3]"  1 0.026081518832855737 19 -0.61145088902646128
+		 32 0.26550121183966918 60 0.11568149696967385;
 createNode animCurveTA -n "Neck_02_FK_Ctrl_rotateZ";
 	rename -uid "36396DBE-4200-B149-BA32-8EB4B3682B10";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 -1.6961741606693379 19 -3.4168734388545534
-		 32 -4.8574292418354936 45 -8.5398706151257482 60 -9.6853057353110916;
+	setAttr -s 4 ".ktv[0:3]"  1 -1.6961741606693379 19 -3.4168734388545534
+		 32 3.0680128079071625 60 -6.1445284410617056;
 createNode animCurveTU -n "Neck_02_FK_Ctrl_scaleX";
 	rename -uid "0C97F710-49AF-626C-94C1-998AB8252A17";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Neck_02_FK_Ctrl_scaleY";
 	rename -uid "3425D0AC-4857-7C1B-2A3A-59A86F5566A1";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Neck_02_FK_Ctrl_scaleZ";
 	rename -uid "0E6DBDF6-482C-EBDF-0CD6-DBA1D3E20B25";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Neck_02_FK_Ctrl_Follow_Translate";
 	rename -uid "50EC4654-4D04-A352-8CD2-48B04C821E86";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Neck_02_FK_Ctrl_Follow_Rotate";
 	rename -uid "B2936E33-4116-3BC4-FAAA-208F98679680";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "R_Finger_02_Knuckle_03_FK_Ctrl_visibility";
 	rename -uid "27E0CBDD-45E6-66A9-116B-45B10F253F69";
 	setAttr ".tan" 9;
@@ -6142,43 +7211,43 @@ createNode animCurveTU -n "R_Finger_04_Knuckle_02_FK_Ctrl_Follow_Rotate";
 createNode animCurveTU -n "Neck_01_FK_Ctrl_visibility";
 	rename -uid "71785C9F-44AA-BC50-A183-26A06C37E0BC";
 	setAttr ".tan" 9;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
-	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
+	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
 createNode animCurveTA -n "Neck_01_FK_Ctrl_rotateX";
 	rename -uid "4A32F6C7-47DE-BDF3-2269-0CB68770F736";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 3.0180343119731212 19 -3.4659419682002577
-		 32 -1.0503364197080249 45 -0.76614430994875549 60 -3.4264961076998355;
+	setAttr -s 4 ".ktv[0:3]"  1 3.0180343119731212 19 -3.4659419682002577
+		 32 -0.46611435153016439 60 -3.3040036743504371;
 createNode animCurveTA -n "Neck_01_FK_Ctrl_rotateY";
 	rename -uid "C96CE5F6-415E-974A-373B-92899CE31F60";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 0.026081518832855737 19 -0.65159930591906889
-		 32 -0.56109550763638882 45 -0.9102801214069417 60 -0.92541178507656141;
+	setAttr -s 4 ".ktv[0:3]"  1 0.026081518832855737 19 -0.65159930591906889
+		 32 0.30902330428109515 60 0.54034434828259514;
 createNode animCurveTA -n "Neck_01_FK_Ctrl_rotateZ";
 	rename -uid "A079B85A-4FEE-D328-D4C8-FDA05148CF3C";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 -1.6961741606693379 19 -3.4689243455337024
-		 32 -4.9104292568856005 45 -8.5897545409017315 60 -9.7351262965637559;
+	setAttr -s 4 ".ktv[0:3]"  1 -1.6961741606693379 19 -3.4689243455337024
+		 32 3.0051669598936441 60 -2.0779279781082978;
 createNode animCurveTU -n "Neck_01_FK_Ctrl_scaleX";
 	rename -uid "41479240-452B-7612-EAE7-43925CCB235E";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Neck_01_FK_Ctrl_scaleY";
 	rename -uid "E8EFCDF1-4033-A67C-3278-599FED0B9F88";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Neck_01_FK_Ctrl_scaleZ";
 	rename -uid "56D18B54-4569-0090-D032-E88871F212CF";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Neck_01_FK_Ctrl_Follow_Translate";
 	rename -uid "2A12FFF2-4BBF-3552-FFD8-B6BD69F9FB84";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "Neck_01_FK_Ctrl_Follow_Rotate";
 	rename -uid "A5C2607E-4643-C634-B164-239F809E5A0C";
 	setAttr ".tan" 10;
-	setAttr -s 5 ".ktv[0:4]"  1 1 19 1 32 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 19 1 32 1 60 1;
 createNode animCurveTU -n "R_Finger_04_Knuckle_01_FK_Ctrl_visibility";
 	rename -uid "500C1107-48FE-9A60-C7F0-0893684F2410";
 	setAttr ".tan" 9;
@@ -6512,37 +7581,40 @@ createNode animCurveTU -n "L_Finger_01_Knuckle_02_FK_Ctrl_Follow_Rotate";
 createNode animCurveTU -n "R_Tail_01_IK_Ctrl_visibility";
 	rename -uid "38B61320-4422-DA14-BAB9-4D8D6158CBE4";
 	setAttr ".tan" 9;
-	setAttr ".ktv[0]"  1 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 6 ".ktv[0:5]"  1 1 10 1 26 1 38 1 53 1 67 1;
+	setAttr -s 6 ".kot[0:5]"  5 5 5 5 5 5;
 createNode animCurveTA -n "R_Tail_01_IK_Ctrl_rotateX";
 	rename -uid "3DC5353C-4A37-59A1-DB2F-B3A72FE343EF";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 126.64422060035677;
+	setAttr -s 6 ".ktv[0:5]"  1 0.14361084035459795 10 -9.1276201856362835
+		 26 -65.42419298197089 38 -73.082597050228316 53 -59.065385445849451 67 -50.634774050832128;
 createNode animCurveTA -n "R_Tail_01_IK_Ctrl_rotateY";
 	rename -uid "620EFED2-4F89-B8E7-D83A-B1BB0602C352";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -27.764917591722188;
+	setAttr -s 6 ".ktv[0:5]"  1 -3.0099671340263097 10 71.406175808397734
+		 26 9.0511405692179583 38 -26.554733028786615 53 33.016523260752393 67 -10.402597224436581;
 createNode animCurveTA -n "R_Tail_01_IK_Ctrl_rotateZ";
 	rename -uid "18037C6B-4431-1B84-6A33-1E954DF2C982";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 -136.45260212635011;
+	setAttr -s 6 ".ktv[0:5]"  1 -20.971259239363977 10 -37.245484414547938
+		 26 -61.473209667402436 38 -23.943858297379993 53 -15.356603914207485 67 -68.511107125550367;
 createNode animCurveTU -n "R_Tail_01_IK_Ctrl_scaleX";
 	rename -uid "9259F87E-4EE8-0533-2EA4-49A3E49DE8E1";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 10 1 26 1 38 1 53 1 67 1;
 createNode animCurveTU -n "R_Tail_01_IK_Ctrl_scaleY";
 	rename -uid "2CB960A7-4379-C67E-0436-7E8B9E51AA0F";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 10 1 26 1 38 1 53 1 67 1;
 createNode animCurveTU -n "R_Tail_01_IK_Ctrl_scaleZ";
 	rename -uid "6F2E7258-4A5D-982D-83DB-AFBAEB8BD7E6";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 10 1 26 1 38 1 53 1 67 1;
 createNode animCurveTU -n "R_Tail_01_IK_Ctrl_Operating_Space";
 	rename -uid "5C5A0C87-47D7-2F26-A7B6-C4814FCDC1B8";
 	setAttr ".tan" 9;
-	setAttr ".ktv[0]"  1 3;
-	setAttr ".kot[0]"  5;
+	setAttr -s 6 ".ktv[0:5]"  1 6 10 6 26 6 38 6 53 6 67 6;
+	setAttr -s 6 ".kot[0:5]"  5 5 5 5 5 5;
 createNode animCurveTU -n "L_Tail_02_IK_Ctrl_visibility";
 	rename -uid "CDAC3814-4DEF-3652-8E1A-D09A139644DC";
 	setAttr ".tan" 9;
@@ -6580,79 +7652,82 @@ createNode animCurveTU -n "L_Tail_02_IK_Ctrl_Operating_Space";
 createNode animCurveTU -n "L_Tail_01_IK_Ctrl_visibility";
 	rename -uid "4CBC00AB-4D96-3F8C-81C7-2A85E40267C2";
 	setAttr ".tan" 9;
-	setAttr ".ktv[0]"  1 1;
-	setAttr ".kot[0]"  5;
+	setAttr -s 6 ".ktv[0:5]"  1 1 10 1 26 1 38 1 53 1 67 1;
+	setAttr -s 6 ".kot[0:5]"  5 5 5 5 5 5;
 createNode animCurveTA -n "L_Tail_01_IK_Ctrl_rotateX";
 	rename -uid "CABFB839-40F1-CBB9-E85B-35969693F3A1";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 6 ".ktv[0:5]"  1 -2.5480170550863681 10 13.4748537228761
+		 26 64.535874222369642 38 77.457282032117377 53 67.154310411258095 67 48.063907933432652;
 createNode animCurveTA -n "L_Tail_01_IK_Ctrl_rotateY";
 	rename -uid "74778DC0-422C-D5E2-8D67-78BBCBD9721C";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 6 ".ktv[0:5]"  1 2.87355843599628 10 -63.192545944629842
+		 26 0.047710126579177455 38 36.776634462725063 53 -23.436686630626852 67 17.534572299160462;
 createNode animCurveTA -n "L_Tail_01_IK_Ctrl_rotateZ";
 	rename -uid "3AD5215C-4AAC-81E9-1DB9-BF95E448F3C5";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 0;
+	setAttr -s 6 ".ktv[0:5]"  1 -20.953761939369006 10 -35.103822542182257
+		 26 -60.504909245410836 38 -23.02519551979848 53 -16.297468582518064 67 -69.493794837680014;
 createNode animCurveTU -n "L_Tail_01_IK_Ctrl_scaleX";
 	rename -uid "0ED83D4D-4EA6-D0E8-FC3C-EBBD0EB612F7";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 10 1 26 1 38 1 53 1 67 1;
 createNode animCurveTU -n "L_Tail_01_IK_Ctrl_scaleY";
 	rename -uid "E05BC89E-41BA-1FD7-5753-EABBCF1A067F";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 10 1 26 1 38 1 53 1 67 1;
 createNode animCurveTU -n "L_Tail_01_IK_Ctrl_scaleZ";
 	rename -uid "8A15F6A7-4EAD-304A-2F2A-ACA337875CEB";
 	setAttr ".tan" 10;
-	setAttr ".ktv[0]"  1 1;
+	setAttr -s 6 ".ktv[0:5]"  1 1 10 1 26 1 38 1 53 1 67 1;
 createNode animCurveTU -n "L_Tail_01_IK_Ctrl_Operating_Space";
 	rename -uid "A5F4ED50-4ACD-5107-1CFD-25ADC0D3ACAE";
 	setAttr ".tan" 9;
-	setAttr ".ktv[0]"  1 3;
-	setAttr ".kot[0]"  5;
+	setAttr -s 6 ".ktv[0:5]"  1 6 10 6 26 6 38 6 53 6 67 6;
+	setAttr -s 6 ".kot[0:5]"  5 5 5 5 5 5;
 createNode animCurveTU -n "Jaw_01_FK_Ctrl_visibility";
 	rename -uid "FA5D8EF2-4B0F-918C-F232-3BB873CE578D";
 	setAttr ".tan" 9;
-	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 30 1 67 1;
 	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
 createNode animCurveTA -n "Jaw_01_FK_Ctrl_rotateX";
 	rename -uid "1C2B8343-47EC-3D97-4F43-E5A0887FD16C";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 30 0 67 0;
 createNode animCurveTA -n "Jaw_01_FK_Ctrl_rotateY";
 	rename -uid "63AEAF5F-48D3-B574-66D1-9AA9B5318CC4";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 45 0 60 0;
+	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 30 0 67 0;
 createNode animCurveTA -n "Jaw_01_FK_Ctrl_rotateZ";
 	rename -uid "166967E3-4E00-A46B-9575-0CB90BEE5095";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 -2.5068910700431579 12 7.0010200519845522
-		 45 6.1987662072110945 60 -8.731887830580165;
+	setAttr -s 4 ".ktv[0:3]"  1 -17.149534746741544 12 7.0010200519845522
+		 30 6.1987662072110945 67 -23.67394739397287;
 createNode animCurveTU -n "Jaw_01_FK_Ctrl_scaleX";
 	rename -uid "2B71F1AF-4CB4-F2AE-A557-ADB9BAB75848";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 30 1 67 1;
 createNode animCurveTU -n "Jaw_01_FK_Ctrl_scaleY";
 	rename -uid "86DF09D2-40A2-C4F8-462A-14A92AAC1C00";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 30 1 67 1;
 createNode animCurveTU -n "Jaw_01_FK_Ctrl_scaleZ";
 	rename -uid "6DCE6290-473A-B954-0A08-E487318213C6";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 30 1 67 1;
 createNode animCurveTU -n "Jaw_01_FK_Ctrl_Follow_Translate";
 	rename -uid "CDCAC340-43D0-0966-B481-90B96F228ED3";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 30 1 67 1;
 createNode animCurveTU -n "Jaw_01_FK_Ctrl_Follow_Rotate";
 	rename -uid "8B5ECEDF-4AE6-0AA2-5D43-8D8817DED052";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 45 1 60 1;
+	setAttr -s 4 ".ktv[0:3]"  1 1 12 1 30 1 67 1;
 createNode animCurveTU -n "Jaw_01_FK_Ctrl_LowerMouthExtension";
 	rename -uid "6BCAAE75-4311-6EAC-2006-F896FB5BB550";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 45 0 60 16.3;
+	setAttr -s 4 ".ktv[0:3]"  1 0 12 0 30 0 67 32.4;
 createNode animCurveTA -n "L_Arm_03_FK_Ctrl_rotateX";
 	rename -uid "8271E8D4-4733-48D3-07CF-55A77A308DC4";
 	setAttr ".tan" 10;
@@ -6716,32 +7791,32 @@ createNode animCurveTA -n "R_Hand_Finger_04_Knuckle_03_Ctrl_rotateZ";
 createNode animCurveTU -n "Look_At_Ctrl_visibility";
 	rename -uid "60AA7BC9-46B6-7748-43AA-DC9C71C399B7";
 	setAttr ".tan" 9;
-	setAttr -s 4 ".ktv[0:3]"  1 1 11 1 19 1 43 1;
-	setAttr -s 4 ".kot[0:3]"  5 5 5 5;
+	setAttr -s 5 ".ktv[0:4]"  1 1 11 1 30 1 43 1 67 1;
+	setAttr -s 5 ".kot[0:4]"  5 5 5 5 5;
 createNode animCurveTA -n "Look_At_Ctrl_rotateX";
 	rename -uid "1F9C4115-49CA-6A86-5456-469370A62EF5";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 11 0 19 0 43 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 11 0 30 0 43 0 67 0;
 createNode animCurveTA -n "Look_At_Ctrl_rotateY";
 	rename -uid "C837C035-4D79-828F-CB00-DD8741457033";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 11 0 19 0 43 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 11 0 30 0 43 0 67 0;
 createNode animCurveTA -n "Look_At_Ctrl_rotateZ";
 	rename -uid "C4F31869-44A9-34C6-C1B1-9D89C90BB825";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 0 11 7.742215619316184 19 0 43 0;
+	setAttr -s 5 ".ktv[0:4]"  1 0 11 7.742215619316184 30 0 43 0 67 0;
 createNode animCurveTU -n "Look_At_Ctrl_scaleX";
 	rename -uid "B4C9C642-431F-21BE-4C94-58928E226137";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 1 11 1 19 1 43 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 11 1 30 1 43 1 67 1;
 createNode animCurveTU -n "Look_At_Ctrl_scaleY";
 	rename -uid "45EA383E-4466-4EAC-3491-1DA5FEE58440";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 1 11 1 19 1 43 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 11 1 30 1 43 1 67 1;
 createNode animCurveTU -n "Look_At_Ctrl_scaleZ";
 	rename -uid "1E87AD1B-483D-DEA0-B5CD-9CBC8AAE1773";
 	setAttr ".tan" 10;
-	setAttr -s 4 ".ktv[0:3]"  1 1 11 1 19 1 43 1;
+	setAttr -s 5 ".ktv[0:4]"  1 1 11 1 30 1 43 1 67 1;
 createNode animCurveTA -n "R_Hand_Finger_04_Knuckle_02_Ctrl_rotateX";
 	rename -uid "3ABEE473-4A59-D48D-35F6-E18C4764348D";
 	setAttr ".tan" 10;
@@ -7311,12 +8386,48 @@ createNode animCurveTU -n "Chest_Ctrl_blendParent1";
 	rename -uid "E8E4BDBA-44A3-87B2-D2DC-E78D5F9436C5";
 	setAttr ".tan" 10;
 	setAttr -s 2 ".ktv[0:1]"  1 0 8 1;
+createNode reference -n "sharedReferenceNode";
+	rename -uid "4F104BB4-435A-8096-251C-EAA5AF890424";
+	setAttr ".ed" -type "dataReferenceEdits" 
+		"sharedReferenceNode";
+createNode gameFbxExporter -n "gameExporterPreset1";
+	rename -uid "24DD9A09-4FAB-D7ED-EFD5-A1B71111A105";
+	setAttr ".pn" -type "string" "Model Default";
+	setAttr ".ils" yes;
+	setAttr ".ssn" -type "string" "";
+	setAttr ".ebm" yes;
+	setAttr ".ich" yes;
+	setAttr ".inc" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+createNode gameFbxExporter -n "gameExporterPreset2";
+	rename -uid "FBFFD261-4007-99D6-09DD-80842AF99091";
+	setAttr ".pn" -type "string" "Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".ilu" yes;
+	setAttr ".eti" 2;
+	setAttr ".ssn" -type "string" "";
+	setAttr ".ac[0].acn" -type "string" "DeathAnim01";
+	setAttr ".ac[0].acs" 1;
+	setAttr ".ac[0].ace" 67;
+	setAttr ".spt" 2;
+	setAttr ".ic" no;
+	setAttr ".ebm" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+	setAttr ".exp" -type "string" "E:/GitRepos/ProjectXenosRevivalAssets//Assets/Characters/DeathAnims";
+createNode gameFbxExporter -n "gameExporterPreset3";
+	rename -uid "F52BDDDF-41CA-6536-7E7D-F4B831E7ACE1";
+	setAttr ".pn" -type "string" "TE Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".eti" 3;
+	setAttr ".ssn" -type "string" "";
+	setAttr ".ebm" yes;
+	setAttr ".fv" -type "string" "FBX201800";
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "A963D288-417C-EDCB-14A2-568ADD7A45C5";
+	rename -uid "E5A868F0-4556-0579-1827-C681B2B31694";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
-	setAttr ".o" 41;
-	setAttr ".unw" 41;
+	setAttr ".o" 1;
+	setAttr ".unw" 1;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -7325,10 +8436,10 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
-	setAttr -s 12 ".st";
+	setAttr -s 16 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 14 ".s";
+	setAttr -s 18 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
@@ -8614,6 +9725,7 @@ connectAttr ":defaultArnoldDisplayDriver.msg" ":defaultArnoldRenderOptions.drive
 connectAttr ":defaultArnoldFilter.msg" ":defaultArnoldRenderOptions.filt";
 connectAttr ":defaultArnoldDriver.msg" ":defaultArnoldRenderOptions.drvr";
 connectAttr "PlayerArms_SKMRNfosterParent1.msg" "PlayerArms_SKMRN.fp";
+connectAttr "sharedReferenceNode.sr" "PlayerArms_SKMRN.sr";
 connectAttr "layerManager.dli[1]" "Cam.id";
 connectAttr "Chest_Ctrl_translateX.o" "pairBlend1.itx1";
 connectAttr "Chest_Ctrl_translateY.o" "pairBlend1.ity1";
