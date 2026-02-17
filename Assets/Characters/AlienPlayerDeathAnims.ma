@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: AlienPlayerDeathAnims.ma
-//Last modified: Mon, Feb 16, 2026 11:57:21 AM
+//Last modified: Tue, Feb 17, 2026 01:43:27 PM
 //Codeset: 1252
 file -rdi 1 -ns "EntityX9Rig" -rfn "EntityX9RigRN" -op "v=0;p=17" -typ "mayaAscii"
 		 "E:/GitRepos/ProjectXenosRevivalAssets//Assets/Characters/Creatures/EntityX9/EntityX9Rig.ma";
@@ -23,7 +23,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202511121304-3e6f4fc3f6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26200)";
-fileInfo "UUID" "10913953-4F38-8BBC-2E62-158ACB5C7F63";
+fileInfo "UUID" "5EA62FE6-4A03-2725-7102-529211D65366";
 createNode transform -s -n "persp";
 	rename -uid "12A951D1-49BB-EC15-A1FA-BCA9AFE033A1";
 	setAttr ".v" no;
@@ -128,7 +128,7 @@ createNode parentConstraint -n "PlayerCam_parentConstraint1" -p "PlayerCam";
 	setAttr ".rsrr" -type "double3" 1.272221872585407e-14 -1.272221872585407e-14 -1.4124500153760515e-30 ;
 	setAttr -k on ".w0";
 createNode fosterParent -n "PlayerArms_SKMRNfosterParent1";
-	rename -uid "DE67DB87-4BB7-7FF5-3455-8B951F87E4D0";
+	rename -uid "CCAEEC23-4375-C6EC-BE4D-BAB2A80D297B";
 createNode parentConstraint -n "Chest_Ctrl_parentConstraint1" -p "PlayerArms_SKMRNfosterParent1";
 	rename -uid "83EC55DB-4D91-65CE-5BBB-F08B7B0FFBDD";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Arm_IK_CtrlW0" -dv 1 -min 0 -at "double";
@@ -979,7 +979,7 @@ createNode reference -n "EntityX9RigRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"EntityX9RigRN"
 		"EntityX9RigRN" 0
-		"EntityX9RigRN" 1296
+		"EntityX9RigRN" 1267
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:SpecimenX9LowPoly|EntityX9Rig:SpecimenX9LowPolyShape" 
 		"visibility" " -k 0 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:SpecimenX9LowPoly|EntityX9Rig:SpecimenX9LowPolyShape" 
@@ -1725,43 +1725,16 @@ createNode reference -n "EntityX9RigRN";
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Geometry|EntityX9Rig:Eyes|EntityX9Rig:R_Eye|EntityX9Rig:R_EyeShape" 
 		"uvPivot" " -type \"double2\" 4.49465274810791016 0.49254424870014191"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
-		"translate" " -type \"double3\" 0.64688428582900681 1.1463041793557949e-08 4.8169838784417607e-08"
-		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
-		"translateX" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
-		"translateY" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
-		"translateZ" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt" 
 		"rotate" " -type \"double3\" -30.19080699136396362 15.9530632072942069 56.38063923283327483"
 		
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:L_Clav_FK_Jnt|EntityX9Rig:L_Arm_01_IK_Jnt|EntityX9Rig:L_Arm_02_IK_Jnt" 
 		"rotate" " -type \"double3\" 0 0 45.81411588657415024"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
-		"translate" " -type \"double3\" -0.64688399354553217 4.6539250231347751e-10 -2.0446777604377075e-07"
-		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
-		"translateX" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
-		"translateY" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
-		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt" 
 		"rotate" " -type \"double3\" -31.05328297484870959 29.93337241759984124 61.81602344972587559"
 		
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Spine_01_FK_Jnt|EntityX9Rig:Spine_02_FK_Jnt|EntityX9Rig:Spine_03_FK_Jnt|EntityX9Rig:R_Clav_FK_Jnt|EntityX9Rig:R_Arm_01_IK_Jnt|EntityX9Rig:R_Arm_02_IK_Jnt" 
 		"rotate" " -type \"double3\" 0.00022910385315623054 0.00032932671971444436 36.33372738549827119"
 		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
-		"translate" " -type \"double3\" 0.29097148776054604 -0.44485402107238814 0.024581506848335266"
-		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
-		"translateX" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
-		"translateY" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
-		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt" 
 		"rotate" " -type \"double3\" -15.94318826468997408 -15.73071966468846838 27.43194580766642687"
 		
@@ -1790,15 +1763,6 @@ createNode reference -n "EntityX9RigRN";
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:L_Leg_01_IK_Jnt|EntityX9Rig:L_Leg_02_IK_Jnt|EntityX9Rig:L_Leg_03_IK_Jnt|EntityX9Rig:L_Leg_04_IK_Jnt|EntityX9Rig:L_Foot_IK_Jnt|EntityX9Rig:L_Toe_03_Knuckle_01_IK_Jnt|EntityX9Rig:L_Toe_03_Knuckle_02_IK_Jnt" 
 		"rotate" " -type \"double3\" -10.90366129998556133 1.30245009464885597 -28.87337300746036206"
 		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
-		"translate" " -type \"double3\" -0.2909710109233834 -0.44484996795654341 0.024581484496593475"
-		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
-		"translateX" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
-		"translateY" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
-		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Skeleton|EntityX9Rig:Root_Jnt|EntityX9Rig:COG_Jnt|EntityX9Rig:Pelvis_FK_Jnt|EntityX9Rig:R_Leg_01_IK_Jnt" 
 		"rotate" " -type \"double3\" 4.74921513469771561 -8.18985827337630568 -33.13075413999732177"
 		
@@ -1960,13 +1924,6 @@ createNode reference -n "EntityX9RigRN";
 		"SpecimenX9W2" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Base_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Base_Ctrl_Grp_parentConstraint1" 
 		"Pelvis_FK_CtrlW3" " -k 1"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp" 
-		"translate" " -type \"double3\" 0.65371835231780984 0.4160528182983394 0.89129124233808488"
-		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp" 
-		"translateX" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp" 
-		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl" 
 		"Operating_Space" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl" 
@@ -1987,15 +1944,6 @@ createNode reference -n "EntityX9RigRN";
 		"Big_Toe_Tap_01" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl" 
 		"Big_Toe_Tap_02" " -k 1"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Ctrl|EntityX9Rig:L_Inner_Bank_Grp|EntityX9Rig:L_Outer_Bank_Grp|EntityX9Rig:L_Foot_Rev_Heel_Jnt" 
-		"rotateZ" " 0"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_PV_Ctrl_Grp" 
-		"translate" " -type \"double3\" 0.76670134894852737 1.84622049331665194 0.35083423689545579"
-		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_PV_Ctrl_Grp" 
-		"translateX" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:L_Leg_Ctrl_Grp|EntityX9Rig:L_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:L_Leg_IK_PV_Ctrl_Grp" 
-		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp_parentConstraint1" 
 		"Transform_CtrlW0" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp_parentConstraint1" 
@@ -2004,22 +1952,8 @@ createNode reference -n "EntityX9RigRN";
 		"SpecimenX9W2" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Base_Ctrl_Grp_parentConstraint1" 
 		"Pelvis_FK_CtrlW3" " -k 1"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl_Grp" 
-		"translate" " -type \"double3\" -0.6537180542945864 0.41605368256568864 0.8912928814658162"
-		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl_Grp" 
-		"translateX" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl_Grp" 
-		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Ctrl" 
 		"Foot_Roll" " -k 1"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp" 
-		"translate" " -type \"double3\" -1.02013488535150731 1.84622068700884157 2.66794917193458758"
-		
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp" 
-		"translateX" " -av"
-		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp" 
-		"translateZ" " -av"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp_parentConstraint1" 
 		"Transform_CtrlW0" " -k 1"
 		2 "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Legs_Ctrl_Grp|EntityX9Rig:R_Leg_Ctrl_Grp|EntityX9Rig:R_Leg_IK_Main_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp|EntityX9Rig:R_Leg_IK_PV_Ctrl_Grp_parentConstraint1" 
@@ -2069,7 +2003,7 @@ createNode reference -n "EntityX9RigRN";
 		"rotate" " -type \"double3\" 44.96182453032338344 -41.44241332514023668 123.22999439294170543"
 		
 		2 "EntityX9Rig:Geo" "displayType" " 2"
-		2 "EntityX9Rig:Ctrls" "visibility" " 1"
+		2 "EntityX9Rig:Ctrls" "visibility" " 0"
 		5 4 "EntityX9RigRN" "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Transform_Ctrl_Grp|EntityX9Rig:Transform_Ctrl.Master_Scale" 
 		"EntityX9RigRN.placeHolderList[1]" ""
 		5 4 "EntityX9RigRN" "|EntityX9Rig:SpecimenX9|EntityX9Rig:Controls|EntityX9Rig:Transform_Ctrl_Grp|EntityX9Rig:Transform_Ctrl.L_Arm_IKFK" 
@@ -3853,7 +3787,7 @@ createNode reference -n "PlayerArms_SKMRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"PlayerArms_SKMRN"
 		"PlayerArms_SKMRN" 0
-		"PlayerArms_SKMRN" 236
+		"PlayerArms_SKMRN" 220
 		0 "|PlayerArms_SKMRNfosterParent1|Chest_Ctrl_parentConstraint1" "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl|PlayerArms_SKM:Chest_Ctrl_Grp|PlayerArms_SKM:Chest_Ctrl" 
 		"-s -r "
 		1 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl|PlayerArms_SKM:Chest_Ctrl_Grp|PlayerArms_SKM:Chest_Ctrl" 
@@ -3863,26 +3797,9 @@ createNode reference -n "PlayerArms_SKMRN";
 		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Geometry|PlayerArms_SKM:PlayerArms_Geo|PlayerArms_SKM:PlayerArms_GeoShape" 
 		"uvPivot" " -type \"double2\" 0.5 0.44366884231567383"
 		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
-		"translate" " -type \"double3\" 9.0831757704903282 0 0"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
-		"translateX" " -av"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
-		"translateY" " -av"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
-		"translateZ" " -av"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:L_Scap_Jnt|PlayerArms_SKM:L_Arm_01_IK_Jnt|PlayerArms_SKM:L_Arm_02_IK_Jnt" 
 		"rotate" " -type \"double3\" 0 0 0"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
-		"translate" " -type \"double3\" -9.08307747073821048 -1.3343490934403235e-05 4.3817612151997309e-05"
-		
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
-		"translateX" " -av"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
-		"translateY" " -av"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
-		"translateZ" " -av"
 		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Skeleton|PlayerArms_SKM:root|PlayerArms_SKM:Chest_Jnt|PlayerArms_SKM:R_Scap_Jnt|PlayerArms_SKM:R_Arm_01_IK_Jnt" 
 		"rotate" " -type \"double3\" 9.3650725876421714e-05 -2.7729611559261726e-05 0.00029422646797287597"
 		
@@ -3890,24 +3807,8 @@ createNode reference -n "PlayerArms_SKMRN";
 		"rotate" " -type \"double3\" 0 0 -0.0006240230958075517"
 		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl|PlayerArms_SKM:Chest_Ctrl_Grp|PlayerArms_SKM:Chest_Ctrl" 
 		"blendParent1" " -k 1"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp" 
-		"scale" " -type \"double3\" 0.03 0.03 0.03"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp" 
-		"scaleX" " -av"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp" 
-		"scaleY" " -av"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp" 
-		"scaleZ" " -av"
 		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:L_Arm_Upper_Twist_Grp|PlayerArms_SKM:L_Arm_Upper_Twist_IK_Grp|PlayerArms_SKM:L_Arm_Upper_Twist_IK_Jnt_Grp|PlayerArms_SKM:L_Arm_Upper_Twist_01_Jnt" 
 		"rotate" " -type \"double3\" 8.5377364625159387e-07 0 0"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp" 
-		"scale" " -type \"double3\" 0.03 0.03 0.03"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp" 
-		"scaleX" " -av"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp" 
-		"scaleY" " -av"
-		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp" 
-		"scaleZ" " -av"
 		2 "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Deformers|PlayerArms_SKM:R_Arm_Upper_Twist_Grp|PlayerArms_SKM:R_Arm_Upper_Twist_IK_Grp|PlayerArms_SKM:R_Arm_Upper_Twist_IK_Jnt_Grp|PlayerArms_SKM:R_Arm_Upper_Twist_01_Jnt" 
 		"rotate" " -type \"double3\" -5.3398770147091268e-05 -0.00043868709611085262 8.0747761103069462e-05"
 		
@@ -3916,7 +3817,7 @@ createNode reference -n "PlayerArms_SKMRN";
 		2 "|PlayerArms_SKM:PlayerArms_Geo_Temp|PlayerArms_SKM:PlayerArms_Geo_TempShape" 
 		"uvPivot" " -type \"double2\" 0.5016556978225708 0.49300759516336257"
 		2 "PlayerArms_SKM:Geo_Layer" "displayType" " 0"
-		2 "PlayerArms_SKM:Ctrl_Layer" "visibility" " 1"
+		2 "PlayerArms_SKM:Ctrl_Layer" "visibility" " 0"
 		5 4 "PlayerArms_SKMRN" "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl.MasterScale" 
 		"PlayerArms_SKMRN.placeHolderList[1]" ""
 		5 4 "PlayerArms_SKMRN" "|PlayerArms_SKM:PlayerArms|PlayerArms_SKM:Controls|PlayerArms_SKM:Transform_Ctrl_Grp|PlayerArms_SKM:Transform_Ctrl.translateZ" 
@@ -8423,7 +8324,7 @@ createNode gameFbxExporter -n "gameExporterPreset3";
 	setAttr ".ebm" yes;
 	setAttr ".fv" -type "string" "FBX201800";
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "E5A868F0-4556-0579-1827-C681B2B31694";
+	rename -uid "13D0AC36-4B7E-75CF-20E2-08AAFCFF7772";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
